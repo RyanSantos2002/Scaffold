@@ -1,0 +1,30 @@
+# Arquivos de dependências
+node_modules/
+package-lock.json
+
+# Arquivos de sessão e credenciais
+session.json
+*.json.bak
+
+# Arquivos de saída/temporários
+debug_*.html
+debug_*.png
+error_log.txt
+run_log.txt
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
