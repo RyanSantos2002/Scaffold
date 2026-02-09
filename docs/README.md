@@ -107,6 +107,11 @@ Captura e documenta ações e regras de negócio do HTML.
 ## 📚 Documentação
 
 - `docs/README.md` - Este arquivo
+- `docs/manual-projeto.md` - **Manual Completo do Projeto**
+- `docs/guia-desenvolvedor.md` - **Guia de Setup e Uso**
+- `docs/workflows.md` - **Catálogo de Workflows**
+- `docs/scripts-automacao.md` - **Documentação Técnica dos Scripts**
+- `docs/troubleshooting.md` - **Resolução de Problemas**
 - `docs/padroes.md` - Padrões e convenções do projeto
 - `docs/regras-negocio/` - Regras de negócio documentadas por tela
 
