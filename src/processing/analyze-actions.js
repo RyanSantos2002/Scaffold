@@ -3,6 +3,7 @@ const path = require('path');
 const cheerio = require('cheerio');
 
 const HTML_FILE = 'C:/Users/Ryan.nunes/Desktop/Nova pasta/output/Form/cadastro_id_9.html';
+const OUTPUT_FILE = 'regras_negocio_Contas.md';
 
 if (!fs.existsSync(HTML_FILE)) {
     console.error('Arquivo HTML não encontrado:', HTML_FILE);
@@ -13,6 +14,7 @@ const html = fs.readFileSync(HTML_FILE, 'utf-8');
 const $ = cheerio.load(html);
 
 const actions = [];
+const businessRules = [];
 
 // 1. Buttons
 $('button').each((i, el) => {
@@ -76,19 +78,40 @@ $('[onclick]').each((i, el) => {
     }
 });
 
-// 5. Scripts (extract functions that look like actions?)
-// This is hard to do reliably without parsing JS, sticking to DOM elements for now.
+// 5. Ajax Calls Analysis (Regex)
+// Patterns: Ajax.post, RequisicaoAjax, $.post, $.ajax
+const ajaxPatterns = [
+    { name: 'Ajax.post', regex: /Ajax\.post\s*\(\s*['"]([^'"]+)['"]/g },
+    { name: 'RequisicaoAjax', regex: /RequisicaoAjax\s*\(\s*['"]([^'"]+)['"]/g },
+    { name: '$.post', regex: /\$\.post\s*\(\s*['"]([^'"]+)['"]/g },
+    { name: '$.ajax', regex: /\$\.ajax\s*\(\s*\{[^}]*url\s*:\s*['"]([^'"]+)['"]/g }
+];
 
-const REPORT_FILE = 'actions_report.txt';
-// Clear file
-fs.writeFileSync(REPORT_FILE, '## Ações Encontradas no Formulário\n\n', 'utf-8');
+ajaxPatterns.forEach(pattern => {
+    let match;
+    while ((match = pattern.regex.exec(html)) !== null) {
+        businessRules.push({
+            type: 'ajax-call',
+            method: pattern.name,
+            url: match[1],
+            context: html.substring(Math.max(0, match.index - 50), Math.min(html.length, match.index + 100)).replace(/\s+/g, ' ').trim()
+        });
+    }
+});
+
+// Write Markdown Report
+fs.writeFileSync(OUTPUT_FILE, '# Relatório de Regras e Ações da Tela (Contas)\n\n', 'utf-8');
 
 function log(msg) {
-    fs.appendFileSync(REPORT_FILE, msg + '\n', 'utf-8');
+    fs.appendFileSync(OUTPUT_FILE, msg + '\n', 'utf-8');
 }
 
+log(`**Arquivo Analisado:** \`${HTML_FILE}\`\n`);
+
+log('## 1. Ações Identificadas (Botões e Links)\n');
+
 if (actions.length === 0) {
-    log('Nenhuma ação explícita encontrada (buttons, links, onclicks).');
+    log('_Nenhuma ação explícita encontrada (buttons, links, onclicks)._');
 } else {
     // Group by Text/Value to dedup
     const uniqueActions = new Map();
@@ -99,15 +122,46 @@ if (actions.length === 0) {
         }
     });
 
-    log(`Total encontrado: ${actions.length}. Únicos: ${uniqueActions.size}\n`);
+    log(`_Total encontrado: ${actions.length}. Únicos: ${uniqueActions.size}_\n`);
 
     uniqueActions.forEach((action, key) => {
         log(`### [${action.type.toUpperCase()}] ${action.text || action.value || 'N/A'}`);
-        if(action.id) log(`- **ID:** ${action.id}`);
+        if(action.id) log(`- **ID:** \`${action.id}\``);
         if(action.onclick) log(`- **OnClick:** \`${action.onclick}\``);
         if(action.href) log(`- **Href:** \`${action.href}\``);
         if(action.class) log(`- **Class:** \`${action.class}\``);
         log('');
     });
 }
-console.log(`Relatório salvo em ${REPORT_FILE}`);
+
+log('\n## 2. Chamadas Ajax e Regras de Negócio (Backend)\n');
+
+if (businessRules.length === 0) {
+    log('_Nenhuma chamada Ajax explícita encontrada via regex._');
+} else {
+    // Dedup business rules based on URL
+    const uniqueRules = new Map();
+    businessRules.forEach(r => {
+        if (!uniqueRules.has(r.url)) {
+            uniqueRules.set(r.url, r);
+        }
+    });
+
+    uniqueRules.forEach((rule) => {
+        log(`### URL: \`${rule.url}\``);
+        log(`- **Método Detectado:** \`${rule.method}\``);
+        log(`- **Contexto:** \`...${rule.context}...\``);
+        
+        // Try to guess Controller/Action
+        const parts = rule.url.split('/').filter(p => p && p !== '..');
+        if (parts.length >= 2) {
+             const action = parts.pop();
+             const controller = parts.pop();
+             // Sometimes area is involved, but usually last two are Controller/Action
+             log(`- **Possível Controller:** \`${controller}\``);
+             log(`- **Possível Action:** \`${action}\``);
+        }
+        log('');
+    });
+}
+console.log(`Relatório salvo em ${OUTPUT_FILE}`);

@@ -1,16 +1,14 @@
 module.exports = {
 
-
-  
-  modulo: 'CRM',//Altere Para o Modulo que deseja capturar
+  modulo: 'Financeiro',//Altere Para o Modulo que deseja capturar
   menuPai: 'Movimento', 
 
   //Sempre serão os Mesmos  
-  SubMenu: 'Contas',
-  idBotaoTela: 'Contas',
+  SubMenu: 'Caixa',
+  idBotaoTela: 'Caixa',
 
-  textoLinkListagem: 'Lista Cadastro de Contas',//Nome da Tela  
-  tela: 'Contas', //Nome interno da tela para arquivos
-  keywordUrl: 'Contas', //Nome da requisição que deseja capturar
+  textoLinkListagem: 'Lista Lançamento de Entradas',//Nome da Tela  
+  tela: 'Caixa', //Nome interno da tela para arquivos
+  keywordUrl: 'LancamentoEntradaCaixas', //Nome da requisição que deseja capturar
   colunaOrdenacao: 'Código' //Nome da Primeira coluna da grid 
-};
+}

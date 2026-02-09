@@ -1,0 +1,2832 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link rel="shortcut icon" href="/Content/gestao/img/erpm8.cloud/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/Content/gestao/css/erpm8.cloud.css" />
+    <link href="/content/gestao/css/fonts-google.css" rel="stylesheet" type="text/css" />
+
+
+    <title></title>
+
+    <link href="/Content/css?v=44cXEMeyWpSzdAIeHLAvKSNFkaDY_eTVAodzoRj1AH01" rel="stylesheet"/>
+
+    <link href="/Content/kendoui?v=8FQkp9wlkRC_INqsNDysVcNOhtwdGQLrEmA9pjlfUPU1" rel="stylesheet"/>
+
+    <link href="/Content/plugins?v=1Im-fxuR_6CgiLv6x5swnaiRtfvZN9xt6uHkwIIthSw1" rel="stylesheet"/>
+
+    <link href="/Content/assets/pages/css/style?v=ii7WDdmHOVDFfYHGRkuQFt4WxiQQoiBu_hfeqFOtbiI1" rel="stylesheet"/>
+
+    <link href="/Content/datatables/estilo?v=9dGHRSMv36Iw_b7SKXgv-luVLlBmLRnD3VpgJaV0JdY1" rel="stylesheet"/>
+
+    <link href="/Content/gestaoui?v=zDs5QJa7d8rIcJ3eBdIGLIWAQCL3Kibxor1OSG_moso1" rel="stylesheet"/>
+
+
+    <style>
+
+        .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable {
+            position: absolute;
+            height: auto;
+            width: 105px !important;
+            top: 362px;
+            left: 810px;
+            display: block;
+            z-index: 101;
+            border-radius: 15px !important;
+        }
+
+        .ui-dialog .ui-dialog-content {
+            padding: 8px 19px;
+            overflow: hidden !important;
+        }
+
+        .display-none.ajax-loading.ui-dialog-content.ui-widget-content {
+            height: 85px !important;
+        }
+
+        .portlet-form .form-body, .form .form-body {
+            padding: 7px;
+        }
+
+        .has-error .k-picker-wrap.k-state-default {
+            border-color: red;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .font-size-14 {
+            font-size: 14px !important;
+        }
+
+        .new-bootbox .modal-body {
+            padding: 25px !important;
+        }
+
+        .new-bootbox .modal-footer {
+            padding: 15px !important;
+        }
+
+        .new-bootbox .modal-header {
+            border: none;
+            padding-top: 14px;
+            padding-left: 25px;
+            padding-bottom: 0px;
+        }
+
+    </style>
+
+    
+
+    <script src="/bundles/js?v=46HKxNs44A7rYfiH5YpfaIL5fwqQKnOOeoUvHHWdhUY1"></script>
+
+    <script src="/bundles/linguagem?v=SitQANjM1XgNlIlMzkHvpjpIw3BQKBoSVKm0MQokDaA1"></script>
+
+    <script src="/bundles/kendoui?v=fuBbpi-6Of2lVyiiJ7RTeXjBJTpqxGpA02OjCzmGOqc1"></script>
+
+    <script src="/bundles/gestaoui?v=TuXL0yZGRMw-GPSWLUL8c737jvxSV2TXWgteq11PwtI1"></script>
+
+
+    <script src="/Content/gestao/scripts/app.js?v=0.6"></script>
+        
+    <link href="/Content/gestao-new-face-css?v=DyWBvp4iJRfZELKaKHzNWg-V7v4bNGcpSJPxwiwzPIw1" rel="stylesheet"/>
+
+    <script src="/Content/gestao-new-face-js?v=LWhBTPK1KmDVpjLt2fz9DZVq8XWClupUwbJ-WA2wvQk1"></script>
+
+    
+    <!-- START_ANALYTICS -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-114910117-5'></script><script>window.dataLayer = window.dataLayer || []; function gtag(){ dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-114910117-5'); </script>
+    <!-- END_ANALYTICS -->
+
+</head>
+
+<body class="page-content-white --nfbody" style="overflow:hidden">
+
+    <div class="page-container">
+
+        <div class="page-content-wrapper">
+
+            <div class="portlet light m8-bordered-portlet portlet-fit  "><div class="portlet-title m8-portlet-title  "><div class="col-lg-12 col-sm-12 col-md-12  "><div class="hide caption font-green-dark "><i class="font-green-dark"></i><span class=" caption-subject bold uppercase ">Lista de Entrada Caixa</span><span class=" caption-helper "></span></div><div class="row  "><div class="col-md-2 col-lg-2 col-sm-2  " style="padding-left: 0px;"><a class=" btn btn-adicionar " href="/treinamento/Financeiro/LancamentoEntradaCaixa"><i class=" fa-plus fa"></i> Adicionar</a></div><div class="col-md-10 col-lg-10 col-sm-10 text-align-right  "><div><div class="panel  "><div class=" panel-body "><div class="form-group text-align-right sem-margin-bottom div-barra-pesquisa-adendo pull-right  "><a class="botao-barra-pesquisa botao-barra-pesquisa-excluidos btn btn-default " onclick="PesquisarExcluidos(this, 1)" title="Pesquisar Excluídos"><img src="/Content/gestao/img/somente-excluidos-pesquisa.png" style="height:20px;"></img></a><a class="botao-barra-pesquisa botao-barra-pesquisa-excluidos btn btn-default " onclick="PesquisarExcluidos(this, 2)" title="Pesquisar Somente Excluídos"><img src="/Content/gestao/img/incluir-itens-excluidos-pesquisa.png" style="height:20px;"></img></a><a class="botao-barra-pesquisa btn btn-default " onclick="SalvarConfiguracao(this)" title="Salvar Configurações"><i class=" bntConfiguracaoPreferencia fa fa-save fa-pesquisa-cinza"></i> </a><a class="botao-barra-pesquisa btn btn-default " onclick="RemoverConfiguracao(this)" title="Remover Configurações"><i class=" fa fa-trash fa-pesquisa-cinza"></i> </a><a class="botao-barra-pesquisa btn btn-default " onclick="ExportarCsv(this)" title="Exportar Excel"><i class=" fa fa-share fa-pesquisa-cinza"></i> </a></div><div class="filtros-pesquisar pull-right  " id="tblLancamentoFiltro"><div class="filtro-pesquisar  "><div class="form-inline  text-align-right configuracao-painel-pesquisar  "><div class="form-group text-align-right  "><select class=" form-control margin-rigth-5px " id="LancamentoEntradaCaixaModeloSelect206662"><option data-field="Id" value="Inteiro">Código</option><option data-field="DataEmissao" value="Data">Emissão</option><option data-field="OperacaoFinanceiraNome" value="AlphaNumerica">Plano de Contas Financeiro</option><option data-field="ContaOrigemIdFiltro" value="Inteiro">Conta Origem</option><option data-field="ContaDestinoIdFiltro" value="Inteiro">Conta Destino</option><option data-field="CentroCustoId" value="Inteiro">Centro de Custo</option><option data-field="Observacao" value="AlphaNumerica">Observação</option><option data-field="PessoaLancamentoNome" value="AlphaNumerica">Pessoa</option><option data-field="Documento" value="AlphaNumerica">Documento</option><option data-field="EmpresaNome" value="AlphaNumerica">Estabelecimento</option><option data-field="DataLancamento" value="Data">Lançamento</option><option data-field="ValorLancamento" value="Monetaria">Valor</option><option data-field="ImovelRuralNome" value="AlphaNumerica">Imóvel Rural Nome</option><option data-field="TipoDocumento" data-value="[{&quot;value&quot;:&quot;NotaFiscal&quot;,&quot;label&quot;:&quot;1 - Nota Fiscal&quot;},{&quot;value&quot;:&quot;Fatura&quot;,&quot;label&quot;:&quot;2 – Fatura&quot;},{&quot;value&quot;:&quot;Recibo&quot;,&quot;label&quot;:&quot;3 – Recibo&quot;},{&quot;value&quot;:&quot;Contrato&quot;,&quot;label&quot;:&quot;4 – Contrato&quot;},{&quot;value&quot;:&quot;FolhaPagamento&quot;,&quot;label&quot;:&quot;5 - Folha de Pagamento&quot;},{&quot;value&quot;:&quot;Outros&quot;,&quot;label&quot;:&quot;6 - Outros&quot;}]" value="Enum">Tipo Documento</option><option data-field="ContaOrigemClassificacaoFiltro" value="AlphaNumerica">Classificação Conta Origem</option><option data-field="ContaDestinoClassificacaoFiltro" value="AlphaNumerica">Classificação Conta Destino</option></select> <i class=" fa-chevron-down fa"></i> </div><div class="form-group text-align-right  "><input class="form-control input-pesquisa " id="LancamentoEntradaCaixaModeloInput568149" placeholder="Digite sua busca..."></input></div><div class="form-group text-align-right sem-margin-bottom  ">&nbsp;<a class="botao-barra-pesquisa btn btn-default " id="LancamentoEntradaCaixaModeloButtonPesquisar121265" title="Pesquisar"><i class=" fa fa-search fa-pesquisa"></i> </a><a class="botao-barra-pesquisa btn btn-default " id="LancamentoEntradaCaixaModeloButtonPesquisar121265" onclick="AdicionarPesquisatblLancamentoTabela()" title="Adicionar"><i class=" fa fa-plus fa-pesquisa"></i> </a></div></div></div></div></div></div></div><script type="text/javascript">var TIPO_PESQUISA = {
+    AlphaNumerica: "AlphaNumerica",
+    Numerica: "Numerica",
+    Monetaria: "Monetaria",
+    Data: "Data",
+    Hora: "Hora",
+    Cnpj: "Cnpj",
+    Cpf: "Cpf",
+    Telefone: "Telefone",
+    Cep: "Cep",
+    Enum: "Enum",
+    DataHora: "DataHora",
+    Inteiro: "Inteiro"
+}
+
+var filtroCopiatblLancamento = "";
+
+var FiltrotblLancamento = function (val) {
+
+    const CHAR_ESPECIAL = "_.,/()-:";
+    const OP_CONTENDO = "contains";
+    const OP_INICIANDO = "startswith";
+    const OP_TERMINANDO = "endswith";
+
+    var IsCharEspecial = function (char) {
+        return CHAR_ESPECIAL.indexOf(char) != -1;
+    };
+
+    var RemoverMascaraPesquisatblLancamento = function (operador, valorMascarado) {
+
+        var indiceInicial = -1;
+        var indiceFinal = 0;
+        var charFinal = valorMascarado.charAt(valorMascarado.length - 1);
+
+        if (operador == OP_CONTENDO || operador == OP_TERMINANDO) {
+            for (var i = 0; i < valorMascarado.length; i++)
+                if (!IsCharEspecial(valorMascarado[i])) {
+                    if (indiceInicial == -1)
+                        indiceInicial = i;
+                    else
+                        indiceFinal = i;
+                }
+            return valorMascarado.substr(indiceInicial, (indiceFinal - indiceInicial) + 1) + (operador == OP_TERMINANDO && IsCharEspecial(charFinal) ? charFinal : "");
+        }
+        else
+            return valorMascarado.substr(0, valorMascarado.indexOf(CHAR_ESPECIAL[0]));
+
+    };
+
+    this.Operador = OP_CONTENDO;
+    this.CharInicial = val.charAt(0);
+    this.CharFinal = val.charAt(val.length - 1);
+
+    this.IsEspecialCharFinal = IsCharEspecial(this.CharFinal);
+    this.IsEspecialCharInicial = IsCharEspecial(this.CharInicial);
+
+    if (this.IsEspecialCharInicial && this.IsEspecialCharFinal) {
+        if (this.CharInicial != CHAR_ESPECIAL[0] && !IsCharEspecial(val[1]))
+            this.Operador = OP_INICIANDO;
+        else if (this.CharFinal != CHAR_ESPECIAL[0] && !IsCharEspecial(val.charAt(val.length - 2)))
+            this.Operador = OP_TERMINANDO;
+    }
+    else if (this.IsEspecialCharInicial && !this.IsEspecialCharFinal)
+        this.Operador = OP_TERMINANDO;
+    else if (!this.IsEspecialCharInicial && this.IsEspecialCharFinal)
+        this.Operador = OP_INICIANDO;
+
+    this.Valor = RemoverMascaraPesquisatblLancamento(this.Operador, val);
+
+}
+
+var ColocaPlaceholderInicialFinaltblLancamento = function (placeholderInicial, placeholderFinal, start, end) {
+    $(start.parent().children()).attr('placeholder', placeholderInicial);
+    $(end.parent().children()).attr('placeholder', placeholderFinal);
+}
+
+var AplicaRetirarEstilostblLancamento = function (elemento) {
+    elemento.css('background', 'transparent');
+    elemento.css('border', 'none');
+}
+
+var FocoCampoPesquisatblLancamento = function (tipoPesquisa) {
+    var foco = $("#LancamentoEntradaCaixaModeloInput568149");
+    FocoFiltrotblLancamento(tipoPesquisa, foco.length == 0 ? $("#StartLancamentoEntradaCaixaModeloInput568149") : foco);
+}
+
+var ObterFiltroPesquisatblLancamento = function () {
+
+    return {
+        select: $("#LancamentoEntradaCaixaModeloSelect206662"),
+        input: $("#LancamentoEntradaCaixaModeloInput568149"),
+        start: $("#StartLancamentoEntradaCaixaModeloInput568149"),
+        end: $("#EndLancamentoEntradaCaixaModeloInput568149")
+    };
+
+}
+
+var BuscaPesquisaFiltrostblLancamento = function (comFiltroVazio, sender) {
+
+    var filtros = [];
+    var selects;
+
+    if (sender)
+        try {
+
+            selects = sender.parents('#tblLancamentoFiltro.filtros-pesquisar').first().find('select');
+
+        } catch (e) {
+
+            selects = $('#tblLancamentoFiltro.filtros-pesquisar').find('select');
+
+        }
+    else
+        selects = $('#tblLancamentoFiltro.filtros-pesquisar').find('select');
+
+    selects.each((indice, select) => {
+
+        select = $(select);
+
+        var filtro = select.parent().parent();
+        var tipoPesquisa = select.val();
+        var valueStart = "";
+        var valueEnd = "";
+        var inputStart = undefined;
+        var inputEnd = undefined;
+        var valorStart = undefined;
+
+        $(filtro.children()[1]).find('input').each((indice, input) => {
+
+            input = $(input);
+
+            let val = input.val();
+
+            if (!val) {
+
+                let dropDownList = input.data("kendoDropDownList");
+
+                if (dropDownList)
+                    val = dropDownList._selectedValue;
+
+            }
+
+            if ((indice == 0 || input.attr('id') != undefined && input.attr('id').includes('Start')) && valueStart === "") {
+
+                valueStart = val;
+                inputStart = input;
+                valorStart = val;
+
+            }
+
+            if ((indice == 2 || input.attr('id') != undefined && input.attr('id').includes('End')) && valueEnd === "") {
+
+                valueEnd = val;
+                inputEnd = input;
+
+                if (valorStart && (!valueEnd || valueEnd === "")) {
+
+                    $(input.parent().children()[1]).val(valorStart);
+                    valueEnd = valorStart;
+
+                }
+
+            }
+
+            if (select.val() === TIPO_PESQUISA.Enum && valueEnd === "")
+                valueEnd = val;
+
+        });
+
+        if (valueEnd || valueStart || comFiltroVazio)
+            filtros.push({ tipoPesquisa: tipoPesquisa, valueStart: valueStart, valueEnd: valueEnd, select: select, inputStart: inputStart, inputEnd: inputEnd });
+
+    });
+
+    return filtros;
+
+}
+
+var validaPesquisartblLancamento = function (filtros) {
+
+    var avaliarValueStart = false;
+
+    switch (tipoPesquisa) {
+
+        case TIPO_PESQUISA.Numerica:
+        case TIPO_PESQUISA.Monetaria:
+        case TIPO_PESQUISA.Data:
+        case TIPO_PESQUISA.Hora:
+        case TIPO_PESQUISA.DataHora:
+            avaliarValueStart = true;
+            break;
+
+    }
+
+    var validacao = { filtros: true, filtrosData: true };
+
+    if (filtros.length == 0)
+        return validacao;
+
+    validacao.filtros = false;
+
+    filtros.forEach(f => {
+
+        if (avaliarValueStart) {
+
+            if (f.valueStart && f.valueEnd)
+                validacao.filtros = true;
+
+        } else {
+
+            if (f.valueEnd)
+                validacao.filtros = true;
+
+        }
+
+        if (f.tipoPesquisa == TIPO_PESQUISA.Data) {
+
+            if (!ValidarFiltroData(f))
+                validacao.filtrosData = false;
+
+        }
+
+    });
+
+    return validacao;
+
+}
+
+var ValidarFiltroData = function (filtro) {
+
+    let validaDataInicial = DataValidaOuLimpa(filtro.valueStart);
+    let validaDataFinal = DataValidaOuLimpa(filtro.valueEnd);
+
+    return (validaDataInicial && validaDataFinal);
+
+}
+
+/*
+ * exibirExcluidos
+ * 1 = exibir excluidos
+ * 2 = exibir somente excluidos
+ */
+var PesquisartblLancamento = function (exibirExcluidos, sender) {
+
+    setTimeout(() => {
+
+        var filtros = BuscaPesquisaFiltrostblLancamento(false, sender);
+        var grid = $("#tblLancamento").data("kendoGrid");
+
+        var validacaoFiltros = validaPesquisartblLancamento(filtros);
+
+        if (!validacaoFiltros.filtrosData) {
+
+            Notificacao.Erro("Data inválida!");
+            return;
+
+        }
+
+        if (!validacaoFiltros.filtros && !exibirExcluidos) {
+
+            grid.dataSource.filter({});
+            return;
+
+        }
+
+        if (filtros.length == 0 && exibirExcluidos) {
+            filtros = BuscaPesquisaFiltrostblLancamento(true, sender);
+        } else if (filtros.length == 0) {
+
+            let forcarFiltro = false;
+
+            if (forcarFiltro) {
+                var filtro = [];
+                filtro.push({ "field": "Id", "operator": "eq", "value": -999 });
+
+                grid.dataSource.filter({ logic: "and", filters: filtro });
+
+                Dialog.showInfo('Filtros Obrigatórios', 'Informe pelo menos um filtro para consultar');
+
+            }
+            else
+                try { grid.dataSource.filter({}); } catch (e) { }
+
+            return;
+
+        }
+
+        var filtrosKendo = [];
+        var kendoGrid = grid;
+
+        filtros.forEach(f => {
+
+            var option = $($(f.select).find('option:selected')[0]);
+            var select = option.attr("data-field");
+
+            filtrosKendo.push(BuscarFiltroKendotblLancamento(f.tipoPesquisa, f.valueStart, f.valueEnd, exibirExcluidos, grid, select, grid, f.inputStart, f.inputEnd));
+
+        });
+
+        var filtroMontado = undefined;
+
+        if (filtrosKendo.length > 1) {
+
+            var arrayFiltro = [];
+
+            filtroMontado = { logic: "and", filters: arrayFiltro };
+
+            filtrosKendo.forEach(filtrosK => {
+
+                filtrosK.forEach(fk => {
+
+                    if (fk.length)
+                        for (var i = 0; i < fk.length; i++)
+                            arrayFiltro.push(fk[i]);
+                    else
+                        arrayFiltro.push(fk);
+
+                });
+
+            });
+
+        } else {
+
+            if (filtrosKendo[0].length > 0)
+                filtroMontado = filtrosKendo[0][0];
+
+        }
+
+        if (filtroMontado)
+            kendoGrid.dataSource.filter(filtroMontado);
+
+        grid.showColumn("ExcluidoPeloUsuarioId");
+
+        var select = $("#LancamentoEntradaCaixaModeloSelect206662 option:selected");
+        var tipoPesquisa = select.val();
+        var input = $(select.parent().parent().parent().children()[1]).find('input:visible');
+
+        FocoFiltrotblLancamento(tipoPesquisa, input);
+
+    }, 100);
+
+}
+
+var DefinirInputEndFiltrotblLancamento = function (inputStart, inputEnd) {
+
+    if (inputStart && inputStart.val() && inputEnd) {
+
+        if (inputEnd.val()) {
+
+            if (inputEnd.val().includes('__') && !inputStart.val().includes('__'))
+                inputEnd.val(inputStart.val());
+
+        } else if (!inputEnd.val() || inputEnd.val() === '')
+            inputEnd.val(inputStart.val());
+
+    }
+
+}
+
+var BuscarFiltroKendotblLancamento = function (tipoPesquisa, valueStart, valueEnd, exibirExcluidos, kendoGrid, select, grid, inputStart, inputEnd) {
+
+    var filtroKendo = [];
+
+    DefinirInputEndFiltrotblLancamento(inputStart, inputEnd);
+
+    switch (tipoPesquisa) {
+
+        case TIPO_PESQUISA.AlphaNumerica:
+
+            if (valueEnd == "" || valueEnd == null || valueEnd === undefined) {
+
+                if (exibirExcluidos)
+                    MostrarExcluidostblLancamento(exibirExcluidos);
+                else
+                    LimpartblLancamento();
+
+                return filtroKendo;
+
+            }
+            else {
+
+                valueStart = (valueStart == "" || valueStart == null || valueStart === undefined) ? "contains" : valueStart;
+                                
+                if (valueEnd.startsWith("#")) valueStart = "startswith";
+                if (valueEnd.endsWith("#")) valueStart = "endswith";
+
+                let filtroStartEnd = 0;
+                if (valueStart == "startswith" || valueStart == "endswith")
+                    filtroStartEnd = 1;
+                if (valueEnd.includes('%'))
+                    filtroStartEnd = 2;
+
+                var valoresFiltro = valueEnd.split(" ");
+                var arrayFiltro = [];
+
+                if (filtroStartEnd == 0)
+                    valoresFiltro.forEach(v => { arrayFiltro.push({ "field": select, "operator": valueStart, "value": v.trim() }); });
+                if (filtroStartEnd == 1)
+                    arrayFiltro.push({ "field": select, "operator": valueStart, "value": valueEnd.trim().replaceAll("#", "") });
+                if (filtroStartEnd == 2) {
+                    valoresFiltro = valueEnd.split("%");
+                    valoresFiltro.forEach(v => {
+                        if (v.length > 0) {
+                            let valor = v;
+                            if (valueEnd.includes(v + "%")) {
+                                valor = v;
+                                valueStart = "startswith";
+                            }
+                            if (valueEnd.includes("%" + v)) {
+                                valor = v;
+                                valueStart = "endswith";
+                            }
+                            if (valueEnd.includes(v + "%") && valueEnd.includes("%" + v)) {
+                                valor = v;
+                                valueStart = "contains";
+                            }
+                            arrayFiltro.push({
+                                "field": select, "operator": valueStart, "value": valor
+                            });
+                        }
+                    });
+                }
+
+                var filtroGrid = { logic: "and", filters: arrayFiltro };
+
+                if (exibirExcluidos) {
+
+                    if (exibirExcluidos == "1") {
+
+                        var filters = [];
+
+                        filters.push(filtroGrid);
+
+                        var arrayFiltroOr = [].concat(arrayFiltro);
+
+                        arrayFiltroOr.push({ "field": "EstaExcluido", "operator": "eq", "value": "true" });
+
+                        filters.push({ logic: "or", filters: arrayFiltroOr });
+                        filtroKendo.push(filters);
+
+                        return filtroKendo;
+
+                    }
+                    else {
+
+                        arrayFiltro.push({ "field": "EstaExcluido", "operator": "eq", "value": "true" });
+                        filtroKendo.push({ logic: "and", filters: arrayFiltro });
+
+                        return filtroKendo;
+
+                    }
+
+                } else {
+
+                    filtroKendo.push(filtroGrid);
+                    return filtroKendo;
+
+                }
+
+            }
+
+            break;
+
+        case TIPO_PESQUISA.Cnpj:
+        case TIPO_PESQUISA.Cpf:
+        case TIPO_PESQUISA.Telefone:
+        case TIPO_PESQUISA.Cep:
+
+            var filtro = new FiltrotblLancamento(valueEnd);
+
+            if (filtro.Valor === "" || filtro.Valor === undefined || filtro.Valor == null) {
+
+                if (exibirExcluidos)
+                    MostrarExcluidostblLancamento(exibirExcluidos);
+                else
+                    LimpartblLancamento();
+
+                return filtroKendo;
+
+            }
+            else {
+
+                if (exibirExcluidos) {
+
+                    if (exibirExcluidos == "1") {
+
+                        var filters = [];
+
+                        filters.push({ logic: "and", "field": select, "operator": filtro.Operador, "value": filtro.Valor });
+
+                        filters.push({
+                            logic: "or", filters: [
+                                { "field": select, "operator": filtro.Operador, "value": filtro.Valor },
+                                { "field": "EstaExcluido", "operator": "eq", "value": "true" }]
+                        });
+
+                        filtroKendo.push(filters);
+
+                        return filtroKendo;
+
+                    }
+                    else {
+
+                        filtroKendo.push({
+                            logic: "and", filters: [
+                                { "field": select, "operator": filtro.Operador, "value": filtro.Valor },
+                                { "field": "EstaExcluido", "operator": "eq", "value": "true" }]
+                        });
+
+                        return filtroKendo;
+
+                    }
+
+                } else {
+
+                    filtroKendo.push({ logic: "and", filters: [{ "field": select, "operator": filtro.Operador, "value": filtro.Valor }] });
+
+                    return filtroKendo;
+
+                }
+
+            }
+
+            break;
+
+        case TIPO_PESQUISA.Enum:
+
+            var filtro = new FiltrotblLancamento(valueEnd);
+
+            if (filtro.Valor === "" || filtro.Valor === undefined || filtro.Valor == null) {
+
+                if (exibirExcluidos)
+                    MostrarExcluidostblLancamento(exibirExcluidos);
+                else
+                    LimpartblLancamento();
+
+                return filtroKendo;
+
+            }
+            else {
+
+                if (exibirExcluidos) {
+
+                    if (exibirExcluidos == "1") {
+
+                        var filters = [];
+
+                        filters.push({ logic: "and", "field": select, "operator": "eq", "value": filtro.Valor });
+
+                        filters.push({
+                            logic: "or", filters: [
+                                { "field": select, "operator": "eq", "value": filtro.Valor },
+                                { "field": "EstaExcluido", "operator": "eq", "value": "true" }]
+                        });
+
+                        filtroKendo.push(filters);
+
+                        return filtroKendo;
+
+                    }
+                    else {
+
+                        filtroKendo.push({
+                            logic: "and", filters: [
+                                { "field": select, "operator": "eq", "value": filtro.Valor },
+                                { "field": "EstaExcluido", "operator": "eq", "value": "true" }]
+                        });
+
+                        return filtroKendo;
+                    }
+
+                } else {
+
+                    filtroKendo.push({ logic: "and", filters: [{ "field": select, "operator": "eq", "value": filtro.Valor }] });
+                    return filtroKendo;
+
+                }
+
+            }
+
+            break;
+
+        case TIPO_PESQUISA.Inteiro:
+
+            var filtro = new FiltrotblLancamento(valueEnd);
+
+            if (filtro.Valor === "" || filtro.Valor === undefined || filtro.Valor == null) {
+
+                if (exibirExcluidos)
+                    MostrarExcluidostblLancamento(exibirExcluidos);
+                else
+                    LimpartblLancamento();
+
+                return filtroKendo;
+
+            }
+            else {
+
+                if (exibirExcluidos) {
+
+                    if (exibirExcluidos == "1") {
+
+                        var filters = [];
+
+                        filters.push({ logic: "and", "field": select, "operator": "eq", "value": filtro.Valor });
+
+                        filters.push({
+                            logic: "or", filters: [
+                                { "field": select, "operator": "eq", "value": filtro.Valor },
+                                { "field": "EstaExcluido", "operator": "eq", "value": "true" }]
+                        });
+
+                        filtroKendo.push(filters);
+
+                        return filtroKendo;
+
+                    }
+                    else {
+
+                        filtroKendo.push({
+                            logic: "and", filters: [
+                                { "field": select, "operator": "eq", "value": filtro.Valor },
+                                { "field": "EstaExcluido", "operator": "eq", "value": "true" }]
+                        });
+
+                        return filtroKendo;
+
+                    }
+
+                } else {
+
+                    filtroKendo.push({ logic: "and", filters: [{ "field": select, "operator": "eq", "value": filtro.Valor }] });
+                    return filtroKendo;
+
+                }
+
+            }
+
+            break;
+
+        case TIPO_PESQUISA.Numerica:
+        case TIPO_PESQUISA.Monetaria:
+        case TIPO_PESQUISA.Data:
+        case TIPO_PESQUISA.Hora:
+        case TIPO_PESQUISA.DataHora:
+
+            var start = undefined;
+            var end = undefined;
+
+            if (inputStart.data(kendoInput).value !== undefined) {
+
+                start = inputStart.data(kendoInput).value();
+                end = inputEnd.data(kendoInput).value();
+
+            } else {
+
+                start = $(inputStart.parent().children()[1]).val();
+                end = $(inputEnd.parent().children()[1]).val();
+
+            }
+
+            if (tipoPesquisa === TIPO_PESQUISA.Data || tipoPesquisa === TIPO_PESQUISA.Hora || tipoPesquisa === TIPO_PESQUISA.DataHora) {
+
+                start = TentarPegarDataInput(inputStart);
+                end = TentarPegarDataInput(inputEnd);
+
+                if (start != undefined && start != null && !inputStart.val().includes('__')) {
+
+                    var arrData = inputStart.val().match(/\d+/g);
+                    start = new Date(arrData[2], arrData[1] - 1, arrData[0]);
+
+                }
+
+                if (end != undefined && end != null && inputEnd.val().includes('__') == false) {
+
+                    var arrData = inputEnd.val().match(/\d+/g);
+                    end = new Date(arrData[2], arrData[1] - 1, arrData[0], 23, 59, 59);
+
+                }
+
+            }
+            else if (tipoPesquisa === TIPO_PESQUISA.Monetaria) {
+
+                start = start.replace(".", "").replace(",", ".");
+                end = end.replace(".", "").replace(",", ".");
+
+            }
+
+
+            if ((valueStart == "" || valueStart == null || valueStart === undefined) && (valueEnd == "" || valueEnd == null || valueEnd === undefined)) {
+
+                if (exibirExcluidos)
+                    MostrarExcluidostblLancamento(exibirExcluidos);
+                else
+                    LimpartblLancamento();
+
+                return filtroKendo;
+
+            }
+            else {
+
+                if (valueEnd == "" || valueEnd == null || valueEnd === undefined || valueEnd.replace(/#|_|\/|:|,| /g, '') == "") {
+
+                    valueEnd = valueStart;
+                    end = start;
+
+                }
+
+                if (valueStart == "" || valueStart == null || valueStart === undefined || valueStart.replace(/#|_|\/|:|,| /g, '') == "") {
+
+                    valueStart = valueEnd;
+                    start = end;
+
+                }
+
+                var kendoInput = tipoPesquisa == TIPO_PESQUISA.Numerica || tipoPesquisa == TIPO_PESQUISA.Monetaria
+                    ? "kendoNumericTextBox"
+                    : tipoPesquisa == TIPO_PESQUISA.Data
+                        ? "kendoDatePicker"
+                        : tipoPesquisa == TIPO_PESQUISA.Hora
+                            ? "kendoTimePicker"
+                            : tipoPesquisa == TIPO_PESQUISA.DataHora
+                                ? "kendoDateTimePicker"
+                                : undefined;
+
+                if (exibirExcluidos) {
+
+                    if (exibirExcluidos == "1") {
+
+                        var filters = [];
+
+                        filters.push({
+                            logic: "and", filters: [
+                                { "field": select, "operator": "ge", "value": start },
+                                { "field": select, "operator": "le", "value": end }]
+                        });
+
+                        filters.push({
+                            logic: "or", filters: [
+                                { "field": select, "operator": "ge", "value": start },
+                                { "field": select, "operator": "le", "value": end },
+                                { "field": "EstaExcluido", "operator": "eq", "value": "true" }]
+                        });
+
+                        filtroKendo.push(filters);
+
+                        return filtroKendo;
+
+                    }
+                    else {
+
+                        filtroKendo.push({
+                            logic: "and", filters: [
+                                { "field": select, "operator": "ge", "value": start },
+                                { "field": select, "operator": "le", "value": end },
+                                { "field": "EstaExcluido", "operator": "eq", "value": "true" }]
+                        });
+
+                        return filtroKendo;
+
+                    }
+
+                } else {
+
+                    filtroKendo.push({
+                        logic: "and", filters: [
+                            { "field": select, "operator": "ge", "value": start },
+                            { "field": select, "operator": "le", "value": end }
+                        ]
+                    });
+
+                    return filtroKendo;
+
+                }
+
+            }
+
+            break;
+
+    }
+
+    return filtroKendo;
+}
+
+/*///////////////////////////////// Funções que tratam Adicionar novos filtros na tela //////////////////////////*/
+var AdicionarPesquisatblLancamentoTabela = function () {
+
+    var evFiltrosPesquisar = $('#tblLancamentoFiltro.filtros-pesquisar');
+
+    evFiltrosPesquisar.append(filtroCopiatblLancamento);
+
+    var novoFiltro = $(evFiltrosPesquisar.children(1)[evFiltrosPesquisar.children().length - 1]);
+
+    novoFiltro.css('margin-top', '1px');
+    novoFiltro.find('.fa-plus').addClass('fa-minus').removeClass('fa-plus');
+
+    var botaoMenos = $($(novoFiltro.children()[2]).children()[1]);
+
+    trataFiltrosPesquisaBotaoMenostblLancamento(botaoMenos);
+    trataFiltrosPesquisaBotaoPesquisartblLancamento($(botaoMenos.parent().children()[0]));
+
+    var select = $($(novoFiltro.children()[0]).children()[0]);
+
+    trataFiltrosPesquisaEventoSelecttblLancamento(select);
+    ajustaTamanhoFixoCampostblLancamento(select, true);
+    select.change();
+
+    ajustarAlturaGridtblLancamento();
+}
+
+var ajustarAlturaGridtblLancamento = function () {
+
+    var tamanhoExtra = 34;
+    var selects = $('#tblLancamentoFiltro.filtros-pesquisar').find('select');
+    tamanhoExtra = (selects.length - 1) * tamanhoExtra;
+
+    if ($('.m8-portlet-listagem')[0] != 'undefined')
+        AjustarAlturaGrid($('.m8-portlet-listagem')[0], 0.95, tamanhoExtra);
+    else if ($('.modal-body')[0] != 'undefined') {
+
+        if ($('.modal-body').closest('.modalPesquisa'))
+            AjustarAlturaGrid($('.modal-body')[0], 0.80, tamanhoExtra);
+
+    }
+
+}
+
+var ajustaTamanhoFixoCampostblLancamento = function (select, ajustarCentroCampoUnico) {
+
+    select.css('width', '140px');
+
+    var esquerda = select.parent();
+    esquerda.css('max-width', '140px');
+    esquerda.css('min-width', '140px');
+    esquerda.css('width', '140px');
+
+    var centro = $(select.parent().parent().children()[1]);
+    centro.css('max-width', '245px');
+    centro.css('min-width', '245px');
+    centro.css('width', '245px');
+    centro.find('span.k-numeric-wrap.k-state-default').css('padding', '0px');
+
+    //ajusta tamanho simples centro
+    centro.find('.width-100px').removeClass('width-100px');
+    if (ajustarCentroCampoUnico)
+        $(centro.children().find('input:visible')).css('width', '233px');
+
+}
+
+var RetiraEstilosFiltrostblLancamento = function (filtro, tipoPesquisa) {
+    //retira estilos e deixa com o novo formato - sem formato
+
+    AplicaRetirarEstilostblLancamento(filtro.find('.form-control.input-pesquisa'));
+    AplicaRetirarEstilostblLancamento(filtro.find('.k-picker-wrap.k-state-default'));
+    if (filtro.find('input:visible').length > 1) {
+        AplicaRetirarEstilostblLancamento(filtro.find('span.k-select'));
+        filtro.find('.form-control.input-pesquisa').css('width', '110px');
+    }
+    else {
+        filtro.find('.form-control.input-pesquisa').css('width', '233px');
+    }
+    if (tipoPesquisa != TIPO_PESQUISA.DataHora && tipoPesquisa != TIPO_PESQUISA.Data)
+        filtro.find('span.k-select').css('display', 'none');
+
+    AplicaRetirarEstilostblLancamento(filtro.find('.k-numeric-wrap.k-state-default'));
+    AplicaRetirarEstilostblLancamento(filtro.find('.k-dropdown-wrap.k-state-default'));
+}
+
+var trataFiltrosPesquisaEventoSelecttblLancamento = function (select) {
+    select.on('change', function (e) {
+        AjustarCampoPesquisaFiltrostblLancamento($(this).find('option:selected'), select);
+    });
+}
+
+var trataFiltrosPesquisaBotaoMenostblLancamento = function (botaoMenos) {
+
+    botaoMenos.attr('title', 'Remover');
+    botaoMenos.unbind('click').attr('onclick', '').unbind('click');
+
+    botaoMenos.on('click', (elemento) => {
+
+        $(elemento.target).parents('.configuracao-painel-pesquisar').remove();
+        ajustarAlturaGridtblLancamento();
+
+    });
+
+}
+
+var trataFiltrosPesquisaBotaoPesquisartblLancamento = function (btPesquisa) {
+    var widthPesquisa = btPesquisa.width();
+    var paddingRight = Number.parseInt(btPesquisa.css('padding-right'));
+    var paddingLeft = Number.parseInt(btPesquisa.css('padding-left'));
+    widthPesquisa += (paddingLeft + paddingRight);
+    $(btPesquisa.parent()).prepend('<div class="espaco-pesquisa pull-right"></div>')
+    btPesquisa.remove();
+    $('.espaco-pesquisa').css('width', widthPesquisa + 'px');
+}
+
+var AjustarCampoPesquisaFiltrostblLancamento = function (optionSelected, select) {
+
+    var filtro = select.parent().parent();
+
+    tipoPesquisa = optionSelected.val();
+    RestaurarInputPesquisaFiltrostblLancamento(select);
+
+    var divPesquisa = ObterDivPesquisaFiltrostblLancamento(select);
+    divPesquisa.html('<input class="form-control input-pesquisa " id="LancamentoEntradaCaixaModeloInput568149" placeholder="Digite sua busca..."></input>');
+
+    switch (tipoPesquisa) {
+        case TIPO_PESQUISA.AlphaNumerica:
+        case TIPO_PESQUISA.Numerica:
+        case TIPO_PESQUISA.Inteiro:
+        case TIPO_PESQUISA.Monetaria:
+        case TIPO_PESQUISA.Data:
+        case TIPO_PESQUISA.Hora:
+        case TIPO_PESQUISA.DataHora:
+            MontarPesquisaDuplaFiltrostblLancamento(divPesquisa, tipoPesquisa, select);
+            break;
+        case TIPO_PESQUISA.Cnpj:
+            $("#LancamentoEntradaCaixaModeloInput568149").kendoMaskedTextBox({ mask: "00.000.000/0000-00", value: "" });
+            break;
+        case TIPO_PESQUISA.Cpf:
+            $("#LancamentoEntradaCaixaModeloInput568149").kendoMaskedTextBox({ mask: "000.000.000-00", value: "" });
+            break;
+        case TIPO_PESQUISA.Telefone:
+            $("#LancamentoEntradaCaixaModeloInput568149").kendoMaskedTextBox({ mask: "(900)90000-0000", value: "" });
+            break;
+        case TIPO_PESQUISA.Cep:
+            $("#LancamentoEntradaCaixaModeloInput568149").kendoMaskedTextBox({ mask: "00000-000", value: "" });
+            break;
+        case TIPO_PESQUISA.Enum:
+            $(filtro.children()[1]).find('input:visible').kendoDropDownList({
+                dataTextField: "label",
+                dataValueField: "value",
+                dataSource: JSON.parse(optionSelected.attr("data-value")),
+                index: -1,
+            });
+            //$(filtro.children()[1]).find('input:visible').data("kendoDropDownList").list.width("auto");
+            break;
+
+    }
+
+    $("#LancamentoEntradaCaixaModeloButtonPesquisar121265").attr("data-pesquisa", tipoPesquisa);
+    $("#LancamentoEntradaCaixaModeloInput568149").attr("data-pesquisa", tipoPesquisa);
+    $("#LancamentoEntradaCaixaModeloInput568149").removeClass("k-textbox");
+
+    RetiraEstilosFiltrostblLancamento(filtro, tipoPesquisa);
+    DefinirKeyDownInputsFiltrotblLancamento(filtro, tipoPesquisa);
+    FocoCampoPesquisaFiltrotblLancamento(filtro, tipoPesquisa);
+
+    $('.configuracao-painel-pesquisar').find('select.form-control').addClass('m8-select-form-control');
+
+}
+
+var DefinirKeyDownInputsFiltrotblLancamento = function (filtro, tipoPesquisa) {
+
+    var inputs = filtro.children().find('input:visible');
+
+    if (inputs.length == 1) {
+
+        $(inputs[0]).on("keydown", function (e) { if (e.which == 13) PesquisartblLancamento(); });
+
+        inputs[0] = $($(inputs[0]).parent().children()[1]);
+
+        $(inputs[0]).on("keydown", function (e) { if (e.which == 13) PesquisartblLancamento(); });
+
+    } else {
+
+        if (tipoPesquisa == TIPO_PESQUISA.Numerica || tipoPesquisa == TIPO_PESQUISA.Monetaria) {
+
+            inputs[0] = $($(inputs[0]).parent().children()[1]);
+            inputs[1] = $($(inputs[1]).parent().children()[1]);
+
+            $(inputs[0]).on("keydown", function (e) {
+
+                if (e.which == 13)
+                    FocoFiltrotblLancamento(tipoPesquisa, $(inputs[1]));
+
+            });
+
+            $(inputs[1]).on("keydown", function (e) { if (e.which == 13) PesquisartblLancamento(); });
+
+        } else {
+
+            $(inputs[0]).on("keydown", function (e) {
+
+                if (e.which == 13)
+                    FocoFiltrotblLancamento(tipoPesquisa, $(inputs[1]));
+
+            });
+
+            $(inputs[1]).on("keydown", function (e) { if (e.which == 13) PesquisartblLancamento(); });
+
+        }
+
+    }
+}
+
+var FocoCampoPesquisaFiltrotblLancamento = function (filtro, tipoPesquisa) {
+    var foco = filtro.children().find('input:visible');
+    if (foco.length > 1)
+        //Foco(tipoPesquisa, $(filtro.children().find('input')[1]).not('visible').data());
+        FocoFiltrotblLancamento(tipoPesquisa, $(foco[0]));
+    else
+        FocoFiltrotblLancamento(tipoPesquisa, foco);
+}
+
+var FocoFiltrotblLancamento = function (tipoPesquisa, elemento) {
+
+    switch (tipoPesquisa) {
+
+        case TIPO_PESQUISA.AlphaNumerica:
+        case TIPO_PESQUISA.Inteiro:
+        case TIPO_PESQUISA.Cnpj:
+        case TIPO_PESQUISA.Cpf:
+        case TIPO_PESQUISA.Telefone:
+        case TIPO_PESQUISA.Cep:
+        case TIPO_PESQUISA.Data:
+        case TIPO_PESQUISA.Hora:
+        case TIPO_PESQUISA.DataHora:
+
+            SetarFoco(elemento);
+
+            break;
+
+        case TIPO_PESQUISA.Numerica:
+        case TIPO_PESQUISA.Monetaria:
+
+            try {
+
+                elemento = $(elemento.parent().children()[1]);
+                elemento = elemento.data("kendoNumericTextBox");
+
+                if (elemento)
+                    elemento.focus();
+
+            } catch (e) {
+
+                console.log("PesquisaSimplesScripts.js > FocoFiltrotblLancamento > [Linha:847]");
+                console.log(e);
+
+            }
+
+            break;
+
+    }
+}
+
+var MontarPesquisaDuplaFiltrostblLancamento = function (divPesquisa, tipoPesquisa, select) {
+
+    var filtro = select.parent().parent();
+
+    divPesquisa.html('<input class="form-control input-pesquisa " id="StartLancamentoEntradaCaixaModeloInput568149" placeholder="Digite sua busca..."></input>&nbsp;<span class="vogal-a">à</span>&nbsp;<input class="form-control input-pesquisa " id="EndLancamentoEntradaCaixaModeloInput568149" placeholder="Digite sua busca..."></input>');
+
+    var start = divPesquisa.find("#StartLancamentoEntradaCaixaModeloInput568149");
+    var end = divPesquisa.find("#EndLancamentoEntradaCaixaModeloInput568149");
+
+    //refazendo
+    var divStartEnd = $($(select.parents('.configuracao-painel-pesquisar').children()[1]).parent());
+    var startEnd = divStartEnd.find('input').not('.k-formatted-value');
+    start = $(startEnd[0]);
+    end = $(startEnd[1]);
+
+    //Troca de layout de pesquisa - faz aparecer a primeira caixa e o à
+    filtro.find('.vogal-a').css('inline-display', 'block');
+    $(start).css('display', 'inline-block');
+
+    //vem um placeholder padrão da plataforma, no entanto está sendo tratado estaticamente aqui para cada situação de pesquisa
+    select.parent().parent().find('.form-control.input-pesquisa').attr('placeholder', '');
+
+    var classeWidth100 = "width-100px";
+    switch (tipoPesquisa) {
+        case TIPO_PESQUISA.Numerica:
+            ajustaCamposPesquisaDuplatblLancamento(start, end, classeWidth100, classeWidth100, { format: "#" }, 'Valor Inicial', 'Valor Final', 9);
+            break;
+
+        case TIPO_PESQUISA.Inteiro:
+            filtro.find('.vogal-a').css('display', 'none');
+            ajustaCamposPesquisaDuplatblLancamento(start, end, '', '', { format: "#" }, '', 'Código', 10);
+            $(filtro.find('.k-widget.k-numerictextbox.form-control.input-pesquisa')[0]).css('display', 'none');
+            break;
+
+        case TIPO_PESQUISA.Monetaria:
+            ajustaCamposPesquisaDuplatblLancamento(start, end, classeWidth100, classeWidth100, { format: "n", decimals: 7 }, 'Valor Inicial', 'Valor Final', 18);
+            break;
+
+        case TIPO_PESQUISA.Data:
+            start.kendoDatePicker({ format: "dd/MM/yyyy", culture: "pt-BR" });
+            start.kendoMaskedTextBox({ mask: "00/00/9999" });
+            start.on('focusout', AjustarCampoDataFocusouttblLancamento);
+            start.on("keydown", (e) => { if (e.which == 13) AjustarCampoDataFocusouttblLancamento(e); });
+            end.kendoDatePicker({ format: "dd/MM/yyyy", culture: "pt-BR" });
+            end.kendoMaskedTextBox({ mask: "00/00/9999" });
+            end.on('focusout', AjustarCampoDataFocusouttblLancamento);
+            end.on("keydown", (e) => { if (e.which == 13) AjustarCampoDataFocusouttblLancamento(e); });
+            ColocaPlaceholderInicialFinaltblLancamento('Data Inicial', 'Data Final', start, end);
+            break;
+
+        case TIPO_PESQUISA.DataHora:
+            start.kendoDateTimePicker({
+                timeFormat: "HH:mm",
+                format: "dd/MM/yyyy hh:mm",
+                parseFormats: ["dd/MM/yyyy hh:mm", "dd/MM/yyyy", "HH:mm"]
+            });
+            end.kendoDateTimePicker({
+                timeFormat: "HH:mm",
+                format: "dd/MM/yyyy HH:mm",
+                parseFormats: ["dd/MM/yyyy hh:mm", "dd/MM/yyyy", "HH:mm"]
+            });
+            ColocaPlaceholderInicialFinaltblLancamento('Data/Hora Inicial', 'Data/Hora Final', start, end);
+            break;
+
+        case TIPO_PESQUISA.Hora:
+            start.kendoTimePicker();
+            end.kendoTimePicker();
+            $(start[0]).attr('placeholder', 'Hora Inicial');
+            $(end[0]).attr('placeholder', 'Hora Final');
+            ColocaPlaceholderInicialFinaltblLancamento('Hora Inicial', 'Hora Final', start, end);
+            break;
+
+        case TIPO_PESQUISA.AlphaNumerica:
+            $(end[0]).attr('placeholder', 'Digite sua busca...');
+            filtro.find('.vogal-a').css('display', 'none');
+            $(start).css('display', 'none');
+            $(end).css('background', 'transparent');
+            ColocaPlaceholderInicialFinaltblLancamento('', 'Digite sua busca...', start, end);
+            break;
+    }
+
+    $("input[type='text'].k-formatted-value, input[data-role='numerictextbox']").removeClass("width-100px");
+}
+
+var AjustarCampoDataFocusouttblLancamento = function (data) {
+    if (!$(data.target).val().includes('__/') && $(data.target).val().includes('____'))
+        $(data.target).val($(data.target).val().replace('____', '2' + (new Date()).getYear() - 100));
+}
+
+var LimitarInteirotblLancamento = function limit(element, max_chars) { if (element.value.length > max_chars) { element.value = element.value.substr(0, max_chars); } }
+
+var ajustaCamposPesquisaDuplatblLancamento = function (start, end, classeStart, classeEnd, format, valorInicial, valorFinal, limitChars) {
+    start.addClass(classeStart);
+    end.addClass(classeEnd);
+    start.css("display", "inline");
+    end.css("display", "inline");
+    start.kendoNumericTextBox(format);
+    end.kendoNumericTextBox(format);
+    start.attr("onkeydown", "LimitarInteirotblLancamento(this, ".concat(limitChars).concat(");"));
+    end.attr("onkeyup", "LimitarInteirotblLancamento(this, ".concat(limitChars).concat(");"));
+    ColocaPlaceholderInicialFinaltblLancamento(valorInicial, valorFinal, start, end);
+}
+
+var ObterDivPesquisaFiltrostblLancamento = function (select) {
+
+    var divPesquisa = $("#LancamentoEntradaCaixaModeloInput568149").parents("div .form-group");
+    if (divPesquisa.length == 0)
+        divPesquisa = $("#StartLancamentoEntradaCaixaModeloInput568149").parents("div .form-group");
+    //refazendo
+    var divStartEnd = $($(select.parents('.configuracao-painel-pesquisar').children()[1]).parent());
+    divPesquisa = $(divStartEnd.children()[1]);
+
+    return divPesquisa;
+}
+
+var RestaurarInputPesquisaFiltrostblLancamento = function (select) {
+
+    var input = $("#LancamentoEntradaCaixaModeloInput568149");
+    var start = $("#StartLancamentoEntradaCaixaModeloInput568149");
+    var end = $("#EndLancamentoEntradaCaixaModeloInput568149");
+
+    var divStartEnd = $($(select.parents('.configuracao-painel-pesquisar').children()[1]).parent());
+    var startEnd = divStartEnd.find('input').not('.k-formatted-value');
+    start = $(startEnd[0]);
+    end = $(startEnd[1]);
+
+    //$("#StartLancamentoEntradaCaixaModeloInput568149, #EndLancamentoEntradaCaixaModeloInput568149").addClass("width-100px");
+
+    try { input.data("kendoMaskedTextBox").destroy(); } catch (e) { };
+    try { start.data("kendoMaskedTextBox").destroy(); } catch (e) { };
+    try { end.data("kendoMaskedTextBox").destroy(); } catch (e) { };
+
+    try { input.data("kendoDatePicker").destroy(); } catch (e) { };
+    try { start.data("kendoDatePicker").destroy(); } catch (e) { };
+    try { end.data("kendoDatePicker").destroy(); } catch (e) { };
+
+    try { input.data("kendoTimePicker").destroy(); } catch (e) { };
+    try { start.data("kendoTimePicker").destroy(); } catch (e) { };
+    try { end.data("kendoTimePicker").destroy(); } catch (e) { };
+
+    try { input.data("kendoDateTimePicker").destroy(); } catch (e) { };
+    try { start.data("kendoDateTimePicker").destroy(); } catch (e) { };
+    try { end.data("kendoDateTimePicker").destroy(); } catch (e) { };
+
+    try { input.data("kendoNumericTextBox").destroy(); } catch (e) { };
+    try { start.data("kendoNumericTextBox").destroy(); } catch (e) { };
+    try { end.data("kendoNumericTextBox").destroy(); } catch (e) { };
+
+    try { input.data("kendoMaskedTextBox").destroy(); } catch (e) { };
+    try { start.data("kendoMaskedTextBox").destroy(); } catch (e) { };
+    try { end.data("kendoDropDownList").destroy(); } catch (e) { };
+
+    input.val("");
+    start.val("");
+    end.val("");
+
+}
+
+/*///////////////////////////////// Fim Funções que tratam Adicionar novos filtros na tela //////////////////////////*/
+
+var MostrarExcluidostblLancamento = function (exibirExcluidos) {
+
+    //exibirExcluidos
+    //1=exibir excluidos
+    //2=exibir somente excluidos
+
+    var grid = $("#tblLancamento").data("kendoGrid");
+    var kendoGrid = grid;
+    if (exibirExcluidos == "1") {
+        kendoGrid.dataSource.filter({
+            logic: "or", filters: [
+                { "field": "Id", "operator": "ge", "value": "0" },
+                { "field": "EstaExcluido", "operator": "eq", "value": "true" }]
+        });
+    } else {
+        kendoGrid.dataSource.filter({
+            logic: "and", filters: [{ "field": "EstaExcluido", "operator": "eq", "value": "true" }]
+        });
+    }
+
+}
+
+var LimpartblLancamento = function (tipoPesquisa) {
+
+    var kendoGrid = $("#tblLancamento").data("kendoGrid");
+    if (kendoGrid.dataSource.filter() != undefined) {
+        kendoGrid.dataSource.filter({});
+        //kendoGrid.dataSource.read();
+    }
+
+    var input = $("#LancamentoEntradaCaixaModeloInput568149");
+
+    if (input.length > 0)
+        input.val("");
+    else switch (tipoPesquisa) {
+        case TIPO_PESQUISA.Numerica:
+        case TIPO_PESQUISA.Monetaria:
+            $("#StartLancamentoEntradaCaixaModeloInput568149").data("kendoNumericTextBox").value("");
+            $("#EndLancamentoEntradaCaixaModeloInput568149").data("kendoNumericTextBox").value("");
+            break;
+        case TIPO_PESQUISA.Data:
+            $("#StartLancamentoEntradaCaixaModeloInput568149").data("kendoDatePicker").value("");
+            $("#EndLancamentoEntradaCaixaModeloInput568149").data("kendoDatePicker").value("");
+            break;
+        case TIPO_PESQUISA.Hora:
+            $("#StartLancamentoEntradaCaixaModeloInput568149").data("kendoTimePicker").value("");
+            $("#EndLancamentoEntradaCaixaModeloInput568149").data("kendoTimePicker").value("");
+            break;
+        case TIPO_PESQUISA.DataHora:
+            $("#StartLancamentoEntradaCaixaModeloInput568149").data("kendoDateTimePicker").value("");
+            $("#EndLancamentoEntradaCaixaModeloInput568149").data("kendoDateTimePicker").value("");
+            break;
+        case TIPO_PESQUISA.AlphaNumerica:
+            $("#EndLancamentoEntradaCaixaModeloInput568149").val("");
+            break;
+        case TIPO_PESQUISA.Cnpj:
+        case TIPO_PESQUISA.Cpf:
+        case TIPO_PESQUISA.Telefone:
+        case TIPO_PESQUISA.Cep:
+            $("#StartLancamentoEntradaCaixaModeloInput568149").val("");
+            $("#EndLancamentoEntradaCaixaModeloInput568149").val("");
+            break;
+    }
+
+    $("#LancamentoEntradaCaixaModeloAviso788142").addClass("hidden");
+    FocoCampoPesquisatblLancamento(tipoPesquisa);
+
+}
+
+var TratarPesquisatblLancamento = function (sender) {
+
+    PesquisartblLancamento(undefined, sender);
+
+}
+
+var informacaoUsuariotblLancamento = function (e, id, excluiu) {
+
+    e.preventDefault();
+    e.stopPropagation();
+    var ajaxLoadSeletor = $(".ajax-loading");
+    ajaxLoadSeletor.dialog("open");
+    $.ajax({
+        url: '/treinamento/Sistema/ObterUsuarioQueExcluiuOuAtualizou',
+        data: { id: id, excluiu: excluiu },
+        type: "POST",
+        success: function (view) {
+            ajaxLoadSeletor.dialog("close");
+            if (view.Sucesso) {
+                Notificacao.Sucesso(view.Usuario);
+            } else {
+                Notificacao.Alerta(view.Mensagem);
+            }
+        },
+        error: function (evento) {
+            ajaxLoadSeletor.dialog("close");
+        }
+    });
+}
+
+var gridDataBoundBasetblLancamento = function (e) {
+
+    ajustarAlturaGridtblLancamento();
+
+    var rows = e.sender.tbody.children().not('.k-grouping-row').not('.k-group-footer');
+    for (var j = 0; j < rows.length; j++) {
+        var row = $(rows[j]);
+        var dataItem = e.sender.dataItem(row);
+        if (dataItem.get("EstaExcluido")) {
+            row.addClass("m8-registro-excluido");
+        }
+    }
+
+    //trata linha para cor e se for dupla, deixar alinhado no top
+    if (rows.children().find('.m8-grid-linha')) {
+        //busca os tds que não tem nos seus filhos a classe fa-circle.
+        rows.find('td').not(':has(i.fa-circle)').css('vertical-align', 'top');
+    }
+    rows.find('td').css('color', '#757883');
+
+
+    $(e.sender.tbody.children()).find('.m8-usuario-excluiu-id').off('click').on('click', function (e) {
+        var id = $(this).data('m8-excluiu-id');
+        informacaoUsuariotblLancamento(e, id, true);
+    });
+
+    $(e.sender.tbody.children()).find('.m8-usuario-atualizou-id').off('click').on('click', function (e) {
+        var id = $(this).data('m8-atualizou-id');
+        informacaoUsuariotblLancamento(e, id, false);
+    });
+
+}
+
+$("document").ready(function () {
+
+    $("#LancamentoEntradaCaixaModeloSelect206662").off("change").on("change", function (e) {
+
+        $("#LancamentoEntradaCaixaModeloSelect206662 option:selected").each(function () {
+
+            AjustarCampoPesquisaFiltrostblLancamento($(this), $('#LancamentoEntradaCaixaModeloSelect206662'));
+
+        });
+
+    });
+
+    $("#LancamentoEntradaCaixaModeloButtonPesquisar121265").off("click").on("click", function (e) {
+        
+        e.preventDefault();
+
+        TratarPesquisatblLancamento($(this));
+
+    });
+
+    $("#LancamentoEntradaCaixaModeloButtonLimpar526622").off("click").on("click", function (e) {
+
+        e.preventDefault();
+
+        LimpartblLancamento($("#LancamentoEntradaCaixaModeloSelect206662 option:selected").val());
+
+    });
+
+    $("#LancamentoEntradaCaixaModeloButtonRecarregar5567").off("click").on("click", function (e) {
+
+        e.preventDefault();
+
+        TratarPesquisatblLancamento($(this));
+
+    });
+
+    var tipoPesquisa = $("#LancamentoEntradaCaixaModeloSelect206662 option:selected");
+
+    setTimeout(function () {
+
+        var select = $('#LancamentoEntradaCaixaModeloSelect206662');
+        AjustarCampoPesquisaFiltrostblLancamento(tipoPesquisa, select);
+        ajustaTamanhoFixoCampostblLancamento(select, false);
+
+        var grid = $("#tblLancamento").data("kendoGrid");
+        grid.bind("dataBound", gridDataBoundBasetblLancamento);
+
+        filtroCopiatblLancamento = $('#tblLancamentoFiltro.filtros-pesquisar').children(0).html();
+
+    }, 500);
+
+});</script></div></div></div></div><div class="portlet-body form slimScrollDiv  " style="overflow: auto;"><div class="row  "><div class="col-md-12  "><div class="m8-portlet-listagem panel  "><div class=" panel-body "><script type="text/javascript">var selecionados = [];
+
+
+const tblLancamentoExecutarEditarRegistro = (btn) => {
+
+    var _paginaPrincipal = window.parent;
+
+    if (typeof _paginaPrincipal.AbrirNovaAba === "function")
+        if ($(btn).data("url") != '')
+            _paginaPrincipal.AbrirNovaAba("...", $(btn).data("url"));
+
+}
+
+const tblLancamentoObterFiltrosAdicionais = (filtro) => {
+
+    let selector = filtro.select.selector;
+    let filtrosAdicionais = [];
+
+    $(`select[id='${selector.replace("#", "")}'] option:selected`).each((i, e) => {
+
+        if (i > 0) {
+
+            let evOption = $(e);
+            let inputSelector = selector.replace("Select", "Input").replace(/\d+/g, '');
+            let startSelector = selector.replace("#", "Start").replace("Select", "Input").replace(/\d+/g, '');
+            let endSelector = selector.replace("#", "End").replace("Select", "Input").replace(/\d+/g, '');
+            let evInput = evOption.closest(".form-inline").first().find(`[id^="${inputSelector}"]`.replace("#", ""));
+            let valor = evInput.val();
+
+            if (!valor) {
+
+                let dropDownList = evInput.data("kendoDropDownList");
+
+                if (dropDownList)
+                    valor = dropDownList._selectedValue;
+
+            }
+
+            filtrosAdicionais.push({
+                campo: evOption.data("field"),
+                valor: valor,
+                inicio: evOption.closest(".form-inline").first().find(`[id^="${startSelector}"]`).val(),
+                fim: evOption.closest(".form-inline").first().find(`[id^="${endSelector}"]`).val()
+            });
+
+        }
+
+    });
+
+    return filtrosAdicionais;
+}
+
+const tblLancamentoExecutarDeletarRegistro = (btn, funcaoAdicional) => {
+
+    $.ajax({
+        url: $(btn).data("url"),
+        type: "POST",
+        success: function (evento) {
+
+            setTimeout(function () {
+
+                if (evento.Sucesso) {
+
+                    $("#tblLancamento").data("kendoGrid").dataSource.read();
+
+                    try { funcaoAdicional(); } catch (e) { }
+
+                }
+                else
+                    bootbox.alert("Não foi possível excluir o registro!<br />" + evento.Mensagem);
+
+            }, 500);
+
+        },
+        error: function (evento) { setTimeout(function () { bootbox.alert("Não foi possível excluir o registro!<br />" + evento); }, 500) }
+    });
+
+}
+
+const tblLancamentoExecutarRestaurarRegistro = (btn, funcaoAdicional) => {
+
+    $.ajax({
+        url: $(btn).data("url"),
+        type: "POST",
+        success: function (evento) {
+
+            setTimeout(function () {
+
+                if (evento.Sucesso) {
+
+                    $("#tblLancamento").data("kendoGrid").dataSource.read();
+
+                    try { funcaoAdicional(); } catch (e) { }
+
+                }
+                else
+                    bootbox.alert("Não foi possível restaurar o registro!<br />" + evento.Mensagem);
+
+            }, 500);
+
+        },
+        error: function (evento) { setTimeout(function () { bootbox.alert("Não foi possível restaurar o registro!<br />" + evento); }, 500) }
+    });
+
+}
+
+const tblLancamentoAjustarFiltrosAdicionais = (filtro, filtrosAdicionais) => {
+
+    if (filtrosAdicionais)
+        for (let i = 0; i < filtrosAdicionais.length; i++) {
+
+            AdicionarPesquisatblLancamentoTabela();
+
+            let evFormInline = $("#tblLancamentoFiltro > .form-inline").last();
+            let evOptionSelected = evFormInline.find(`select option[data-field='${filtrosAdicionais[i].campo}']`);
+
+            evOptionSelected.attr("selected", true);
+
+            try { AjustarCampoPesquisaFiltrostblLancamento(evOptionSelected, evOptionSelected.parent()); } catch (e) { }
+
+            let evFiltroInput = evFormInline.find(filtro.input.selector);
+
+            evFiltroInput.val(filtrosAdicionais[i].valor);
+            evFormInline.find(filtro.start.selector).val(filtrosAdicionais[i].inicio);
+            evFormInline.find(filtro.end.selector).val(filtrosAdicionais[i].fim);
+
+            let dropDownList = evFiltroInput.data("kendoDropDownList");
+
+            if (typeof dropDownList != 'undefined')
+                dropDownList.value(filtrosAdicionais[i].valor);
+
+        }
+
+}
+
+
+function tblLancamentoOnDeletarRegistro(btn, funcaoAdicional) {
+
+    bootbox.dialog({
+        message: "Excluir Registro?",
+        closeButton: false,
+        buttons: {
+            danger: {
+                label: "Cancelar",
+                className: "btn-danger",
+                callback: function () { }
+            },
+            success: {
+                label: "Confirmar",
+                className: "btn-success",
+                callback: function () { tblLancamentoExecutarDeletarRegistro(btn, funcaoAdicional); }
+            }
+        }
+    });
+
+}
+
+function tblLancamentoOnRestaurarRegistro(btn, funcaoAdicional) {
+
+    bootbox.dialog({
+        message: "Restaurar Registro?",
+        closeButton: false,
+        buttons: {
+            danger: {
+                label: "Cancelar",
+                className: "btn-danger",
+                callback: function () { }
+            },
+            success: {
+                label: "Confirmar",
+                className: "btn-success",
+                callback: function () { tblLancamentoExecutarRestaurarRegistro(btn, funcaoAdicional); }
+            }
+        }
+    });
+
+}
+
+var tblLancamentoMarcarCheckboxTop = function (checkboxTop, checkbox) {
+
+    for (var i = 0; i < checkbox.length; i++)
+        if (!$(checkbox[i]).prop("checked")) {
+            checkboxTop.prop("checked", false);
+            return;
+        }
+
+    checkboxTop.prop("checked", checkbox.length > 0);
+
+}
+
+var tblLancamentoMarcarCheckbox = function (checkbox, checkboxTop) {
+
+    var marcarTopo = true;
+
+    for (var i = 0; i < checkbox.length; i++)
+        if (selecionados.indexOf($(checkbox[i]).val()) != -1)
+            $(checkbox[i]).prop("checked", true);
+        else if (marcarTopo) {
+
+            marcarTopo = false;
+
+            if (checkboxTop.prop("checked"))
+                checkboxTop.prop("checked", false);
+
+        }
+
+    if (marcarTopo && checkboxTop != undefined)
+        checkboxTop.prop("checked", marcarTopo);
+
+}
+
+var tblLancamentoinfoSelecionados = function () {
+
+    var pagerInfo = $("#tblLancamento").children('[data-role="pager"]').children('[class="k-pager-info k-label"]')
+    var text = pagerInfo.text().split('(');
+
+    if (selecionados.length == 0)
+        pagerInfo.text(text[0].trim());
+    else
+        pagerInfo.text(text[0] + ' (' + selecionados.length + ' selecionados )');
+
+}
+
+var tblLancamentoAdicionarSelecionados = function (checkbox) {
+
+    for (var i = 0; i < checkbox.length; i++) {
+
+        var val = $(checkbox[i]).val();
+
+        if (M8.isNotNull(val)) {
+
+            let str = val.toString();
+
+            if (!selecionados.includes(str))
+                selecionados.push(str);
+
+        }
+
+    }
+
+    tblLancamentoinfoSelecionados();
+
+}
+
+var tblLancamentoRemoverSelecionados = function (checkbox) {
+
+    if (selecionados.length > 0)
+        for (var i = 0; i < checkbox.length; i++) {
+
+            var val = $(checkbox[i]).val();
+
+            if (M8.isNotNull(val)) {
+
+                var remove = selecionados.indexOf(val.toString());
+
+                if (remove != -1)
+                    selecionados.splice(remove, 1);
+
+            }
+
+        }
+
+    tblLancamentoinfoSelecionados();
+
+}
+
+var tblLancamentoRecuperarRegistro = function (btn, funcaoAdicional) {
+
+    bootbox.dialog({
+        message: "Recuperar Registro?",
+        closeButton: false,
+        buttons: {
+            danger: {
+                label: "Cancelar",
+                className: "btn-danger",
+                callback: function () { }
+            },
+            success: {
+                label: "Confirmar",
+                className: "btn-success",
+                callback: function () {
+
+                    $.ajax({
+                        url: $(btn).data("url"),
+                        type: "POST",
+                        success: function (evento) {
+
+                            setTimeout(function () {
+
+                                if (evento.Sucesso) {
+
+                                    $("#tblLancamento").data("kendoGrid").dataSource.read();
+
+                                    if (funcaoAdicional != null && funcaoAdicional != undefined)
+                                        funcaoAdicional();
+
+                                }
+                                else
+                                    bootbox.alert("Não foi possível recuperar o registro!<br />" + evento.Mensagem);
+
+                            }, 500);
+
+                        },
+                        error: function (evento) {
+
+                            setTimeout(function () { bootbox.alert("Não foi possível recuperar o registro!<br />" + evento); }, 500)
+
+                        }
+                    });
+                }
+            }
+        }
+    });
+}
+
+var tblLancamentoDeletarRegistro = function (btn, funcaoAdicional) {
+
+    try {
+
+        tblLancamentoIsDeletarRegistroValido(btn, funcaoAdicional, tblLancamentoExecutarDeletarRegistro);
+
+    } catch (e) {
+
+        tblLancamentoOnDeletarRegistro(btn, funcaoAdicional);
+
+    }
+
+}
+
+var tblLancamentoEditarRegistro = function (btn) {
+
+    try {
+
+        tblLancamentoIsEditarRegistroValido(btn, tblLancamentoExecutarEditarRegistro);
+
+    } catch (e) {
+
+        tblLancamentoExecutarEditarRegistro(btn);
+
+    }
+}
+
+var tblLancamentoRestaurarRegistro = function (btn, funcaoAdicional) {
+
+    try {
+
+        tblLancamentoIsRestaurarRegistroValido(btn, tblLancamentoExecutarRestaurarRegistro);
+
+    } catch (e) {
+
+        tblLancamentoOnRestaurarRegistro(btn, funcaoAdicional);
+
+    }
+}
+
+var tblLancamentoDuplicarRegistro = function (btn) {
+    $.ajax({
+        url: $(btn).data("url"),
+        type: "POST",
+        success: function (evento) {
+
+            setTimeout(function () {
+
+                if (evento.Sucesso) {
+
+                    $("#tblLancamento").data("kendoGrid").dataSource.read();
+
+                    Notificacao.Sucesso("Registro duplicado com sucesso!");
+                    
+
+                    if (evento.Valor?.id) {
+                        var _paginaPrincipal = window.parent;
+
+                        if (typeof _paginaPrincipal.AbrirNovaAba === "function")
+                            if ($(btn).data("url-duplicar") != '')
+                                _paginaPrincipal.AbrirNovaAba("...", $(btn).data("url-duplicar") + "/" + evento.Valor.id);
+                    }
+
+                }
+                else
+                    bootbox.alert("Não foi possível copiar o registro!<br />" + evento.Mensagem);
+
+            }, 500);
+
+        },
+        error: function (evento) { setTimeout(function () { bootbox.alert("Não foi possível copiar o registro!<br />" + evento); }, 500) }
+    });
+}
+
+var tblLancamentoVisualizarAnexos = function (urlPesquisaGrid, urlUpload, propriedadeFk) {
+    var tenant = document.location.pathname.split("/")[1];
+    ConstruirModal("AnexosVisualizarModal",
+        "AnexosVisualizarModal",
+        'Visualizar Anexos',
+        `/${tenant}/Sistema/AnexoModal`,
+        { urlPesquisaGrid: urlPesquisaGrid, urlUpload: urlUpload, propriedadeFk: propriedadeFk },
+        function (e) { },
+        function (e) { },
+        "ajaxAnexosVisualizarModal",
+        {
+
+        }
+    );
+}
+
+var tblLancamentoMarcarTodos = function (marcar) {
+
+    var seletorcheckboxTop = "#tblLancamento .k-grid-header  table thead tr th input[type='checkbox']";
+    var checkboxTop = $(seletorcheckboxTop);
+
+    checkboxTop.prop("checked", marcar);
+
+    var checkbox = $("#tblLancamento .k-grid-content table tbody tr:not(.m8-registro-bloqueado-selecao) td input[type='checkbox']");
+
+    if (checkbox.length > 0) {
+
+        checkbox.prop("checked", marcar);
+
+        if (marcar)
+            tblLancamentoAdicionarSelecionados(checkbox);
+        else
+            tblLancamentoRemoverSelecionados(checkbox);
+
+    }
+
+}
+
+var SalvarConfiguracao = function (btn, idUrl) {
+
+    var grid = $("#tblLancamento").data("kendoGrid");
+    var filtro = ObterFiltroPesquisatblLancamento();
+    var campo = $(filtro.select.selector + " option:selected").attr("data-field");
+    var valor = $(filtro.input.selector).val();
+    var inicio = $(filtro.start.selector).val();
+    var fim = $(filtro.end.selector).val();
+    var dataSource = grid.dataSource;
+
+    var state = {
+        columns: grid.columns,
+        page: dataSource.page(),
+        pageSize: dataSource.pageSize(),
+        sort: dataSource.sort(),
+        filter: dataSource.filter(),
+        group: dataSource.group(),
+        filtro: {
+            campo: campo,
+            valor: valor,
+            inicio: inicio,
+            fim: fim
+        },
+        filtrosAdicionais: tblLancamentoObterFiltrosAdicionais(filtro)
+    };
+
+    var relativeUrl = _AjustarUrl($(location).attr('pathname'));
+
+    if (idUrl != undefined)
+        relativeUrl = relativeUrl + idUrl;
+
+    var l = Ladda.create(btn);
+    l.start();
+
+    $.ajax({
+        url: '/treinamento/Home/SalvarGrid',
+        type: "POST",
+        data: {
+            data: kendo.stringify({ 'gridId': '#tblLancamento', 'relativeUrl': relativeUrl, 'options': state }),
+            uri: relativeUrl
+        },
+        success: function (evento) {
+
+            $(".bntConfiguracaoPreferencia").addClass("botao-configuracao-grid-salva");
+            Notificacao.Sucesso("Configurações salvas com sucesso.");
+
+            try {
+
+                GestaoNewFacePreferences.SetConfigGrid('/treinamento/Home/SalvarGrid'.replace("Home/SalvarGrid", "Sistema/ListarGridConfig"));
+
+            } catch (err) {
+
+                console.info(err);
+
+            }
+
+        }
+    }).always(function () { l.stop(); });
+
+}
+
+var RemoverConfiguracao = function (btn, idUrl) {
+
+    var relativeUrl = _AjustarUrl($(location).attr('pathname'));
+
+    if (idUrl != undefined)
+        relativeUrl = relativeUrl + idUrl;
+
+    var l = Ladda.create(btn);
+    l.start();
+
+    $.ajax({
+        url: '/treinamento/Home/RemoverGrid',
+        type: "POST",
+        data: { uri: relativeUrl },
+        success: function (evento) {
+
+            $(".bntConfiguracaoPreferencia").addClass("botao-configuracao-grid-remover");
+            Notificacao.Sucesso("Configurações removidas com sucesso.");
+
+            try {
+
+                GestaoNewFacePreferences.SetConfigGrid('/treinamento/Home/RemoverGrid'.replace("Home/RemoverGrid", "Sistema/ListarGridConfig"));
+
+            } catch (err) {
+
+                console.info(err);
+
+            }
+
+        }
+
+    }).always(function () { l.stop(); });
+
+}
+
+var PesquisarExcluidos = function (btn, exibirExcluidos) {
+
+    PesquisartblLancamento(exibirExcluidos, btn);
+
+}
+
+var AdicionarPesquisatblLancamento = function () {
+
+    AdicionarPesquisatblLancamentoTabela();
+
+}
+
+async function ExportarCsv() {
+    Notificacao.Info("Exportando informações...");
+
+    var grid = $("#tblLancamento").data("kendoGrid");
+    if (!grid) {
+        return;
+    }
+
+    var opcoesOriginais = grid.dataSource.options;
+
+    var colunas = grid.columns.filter(c =>
+        !c.hidden &&
+        c.field &&
+        c.field.toLowerCase() !== 'acoes' &&
+        (c.title || '').toLowerCase() !== 'ações'
+    );
+
+    var filtros = grid.dataSource.filter();
+    var ordenacao = grid.dataSource.sort();
+
+    var dataSourceTemp = new kendo.data.DataSource({
+        type: opcoesOriginais.type,
+        transport: opcoesOriginais.transport,
+        schema: opcoesOriginais.schema,
+        serverPaging: true,
+        serverFiltering: true,
+        serverSorting: true,
+        pageSize: 100000
+    });
+
+    await new Promise(resolve => {
+        dataSourceTemp.one("change", resolve);
+        dataSourceTemp.query({
+            page: 1,
+            pageSize: 100000,
+            filter: filtros,
+            sort: ordenacao
+        });
+    });
+
+    var dados = dataSourceTemp.view();
+    var separador = ';';
+
+    var cabecalho = colunas.map(c => {
+        var titulo = c.title || c.field;
+        return `"${titulo}"`;
+    }).concat('"Excluído"').join(separador);
+
+    var linhas = dados.map(item => {
+        var valoresColunas = colunas.map(c => {
+            var getter = kendo.getter(c.field);
+            var valor = getter(item);
+
+            if (c.field.toLowerCase().includes('usuario') &&
+                (c.title || '').toLowerCase().includes('usuário')) {
+                var excluidoPorId = item.ExcluidoPeloUsuarioId;
+                var atualizadoPorId = item.AtualizadoPeloUsuarioId;
+                var cadastradoPorId = item.UsuarioCadastrouId;
+
+                if (excluidoPorId && excluidoPorId > 0) {
+                    valor = excluidoPorId;
+                } else if (atualizadoPorId && atualizadoPorId > 0) {
+                    valor = atualizadoPorId;
+                } else if (cadastradoPorId && cadastradoPorId > 0) {
+                    valor = cadastradoPorId;
+                }
+            }
+
+            if (valor === null || valor === undefined) return '';
+
+            if (valor instanceof Date) {
+                var formato = c.format || "{0:dd/MM/yyyy HH:mm}";
+                valor = kendo.format(formato, valor);
+            }
+            else if (typeof valor === 'number') {
+                valor = valor.toFixed(2).replace('.', ',');
+            }
+
+            valor = String(valor).replace(/"/g, '""');
+
+            if (valor.includes(separador) || valor.includes('"') || valor.includes('\n')) {
+                valor = `"${valor}"`;
+            }
+
+            return valor;
+        });
+
+        var estaExcluido = item.EstaExcluido ? 'Sim' : 'Não';
+        valoresColunas.push(estaExcluido);
+
+        return valoresColunas.join(separador);
+    });
+
+    var conteudoCsv = cabecalho + '\n' + linhas.join('\n');
+    var csvComBOM = "\ufeff" + conteudoCsv;
+
+    var blob = new Blob([csvComBOM], { type: "text/csv;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var linkDownload = document.createElement("a");
+    linkDownload.href = url;
+    linkDownload.download = "data.csv";
+    document.body.appendChild(linkDownload);
+    linkDownload.click();
+    document.body.removeChild(linkDownload);
+    URL.revokeObjectURL(url);
+}
+
+var _AjustarUrl = function (uri) {
+
+    if (!false)
+        return uri;
+
+    var parts = uri.split('/');
+    var lastSegment = parts.pop() || parts.pop();
+
+    if (!isNaN(lastSegment))
+        uri = parts.join("/");
+
+    uri = uri + "/tblLancamento";
+
+    return uri;
+
+}
+
+var tblLancamentoCarregarConfiguracao = function () {
+
+    setTimeout(() => {
+        
+        var grid = $("#tblLancamento").data("kendoGrid");
+
+        if (false)
+            return;
+
+        let relativeUrl = _AjustarUrl($(location).attr('pathname'));
+        let data = null;
+
+        try {
+
+            let configAll = GestaoNewFacePreferences.GetConfigGrid();
+            let configGrid = configAll == null ? null : configAll.Config.filter(f => f.gridId == '#tblLancamento' && f.relativeUrl == relativeUrl);
+
+            data = configGrid == null || configGrid.length == 0 ? null : configGrid[0];
+
+        } catch (err) {
+
+            console.info(err);
+            data = null;
+
+        }
+
+        if (data == null || data.relativeUrl != relativeUrl)
+            return;
+
+        var eventos = grid._events.dataBound;
+        var options = grid.options;
+
+        options.columns = data.options.columns;
+        options.dataSource.page = data.options.page;
+        options.dataSource.pageSize = data.options.pageSize;
+        options.dataSource.sort = data.options.sort;
+        options.dataSource.filter = data.options.filter;
+        options.dataSource.group = data.options.group;
+
+        grid.destroy();
+
+        $(".bntConfiguracaoPreferencia").addClass("botao-configuracao-grid-salva");
+
+        $("#tblLancamento").empty().kendoGrid(options);
+
+        if (false)
+            AjustarGridModal("#tblLancamento", 0, 0.7);
+
+        var newGrid = $("#tblLancamento").data("kendoGrid");
+
+        $.each(eventos, function (idx1, funcaoPreExistente) {
+
+            var eventosExistentes = newGrid._events.dataBound;
+
+            $.each(eventosExistentes, function (idx2, funcaoGridNova) {
+
+                if (funcaoPreExistente !== funcaoGridNova)
+                    newGrid.bind("dataBound", funcaoPreExistente);
+
+            });
+
+        });
+
+        var filtro = ObterFiltroPesquisatblLancamento();
+
+        if (filtro == null)
+            return;
+
+        $(filtro.select).find('option').each(function (index, element) {
+
+            if ($(element).attr('data-field') === data.options.filtro.campo)
+                $(element).attr('selected', true);
+
+        });
+
+        var tipoPesquisa = $(filtro.select).find('option:selected');
+
+        try {
+
+            AjustarCampoPesquisaFiltrostblLancamento(tipoPesquisa, $(filtro.select));
+
+        } catch (e) {
+
+            console.info(e);
+
+        }
+
+        $(filtro.input.selector).val(data.options.filtro.valor);
+        $(filtro.start.selector).val(data.options.filtro.inicio);
+        $(filtro.end.selector).val(data.options.filtro.fim);
+
+        var dropList = $(filtro.input.selector).data("kendoDropDownList");
+
+        if (typeof dropList != 'undefined')
+            dropList.value(data.options.filtro.valor);
+
+        tblLancamentoAjustarFiltrosAdicionais(filtro, data.options.filtrosAdicionais);
+
+    }, 500);
+
+}
+
+var AjustarAlturaGrid = function (painelAlturaReferencia, porcentual, alturaComponenteExtra) {
+
+    const ALTURA_PADRAO = 400;
+
+    if (typeof painelAlturaReferencia == 'undefined') return;
+
+    var gridElement = $("#tblLancamento");
+    var dataArea = gridElement.find(".k-grid-content");
+    var alturaDisponivel = $(painelAlturaReferencia).innerHeight();
+    var alturaCabecalhoGrid = gridElement.find(".k-grid-header").outerHeight();
+    var alturaAgrupamento = gridElement.find(".k-grouping-header").outerHeight();
+    var alturaRodapeGrid = gridElement.find(".k-grid-footer").outerHeight();
+    var alturaPaginacaoGrid = gridElement.find(".k-grid-pager").outerHeight();
+    var alturaExtra = 0;
+
+    if (alturaComponenteExtra)
+        alturaExtra = alturaComponenteExtra;
+
+    var alturaComponentes = alturaCabecalhoGrid + alturaAgrupamento + alturaRodapeGrid + alturaPaginacaoGrid + alturaExtra;
+    var novaAltura = (alturaDisponivel - alturaComponentes) * porcentual;
+
+    if (novaAltura < ALTURA_PADRAO)
+        novaAltura = ALTURA_PADRAO;
+
+    dataArea.height(novaAltura);
+
+}
+
+
+tblLancamentoOnAjaxLoadComplete = function (e) {
+
+    var seletorcheckboxTop = "#tblLancamento .k-grid-header  table thead tr th input[type='checkbox']";
+    var seletorcheckboxRow = "#tblLancamento .k-grid-content table tbody tr td input[type='checkbox']"
+
+    tblLancamentoMarcarCheckbox($(seletorcheckboxRow), $(seletorcheckboxTop))
+    tblLancamentoinfoSelecionados()
+
+    $(seletorcheckboxTop).off("click").on("click", function (e) {
+
+        var checkbox = $("#tblLancamento .k-grid-content table tbody tr:not(.m8-registro-bloqueado-selecao) td input[type='checkbox']");
+
+        if (checkbox.length > 0) {
+
+            var checked = $(this).prop("checked");
+            checkbox.prop("checked", checked);
+
+            if (checked)
+                tblLancamentoAdicionarSelecionados(checkbox);
+            else
+                tblLancamentoRemoverSelecionados(checkbox);
+        }
+
+    });
+
+    $(seletorcheckboxRow).off("click").on("click", function (e) {
+
+        var checkbox = $(this);
+
+        if (!checkbox.prop("checked")) {
+
+            $(seletorcheckboxTop).prop("checked", false);
+            tblLancamentoRemoverSelecionados(checkbox);
+
+        }
+        else {
+
+            tblLancamentoAdicionarSelecionados(checkbox);
+            tblLancamentoMarcarCheckboxTop($(seletorcheckboxTop), $(seletorcheckboxRow));
+
+        }
+
+    });
+
+    $("#tblLancamento table[role='grid'] tbody tr td a").tooltip();
+
+    setTimeout(function () {
+
+        FormatarColunaCep("#tblLancamento .m8-cep");
+        FormatarColunaTelefone("#tblLancamento .m8-telefone");
+        FormatarColunaCpfCnpj("#tblLancamento .m8-cnpj_cpf");
+        FormatarColunaNumero("#tblLancamento .m8-numero");
+        FormatarColunaDataHora("#tblLancamento .m8-formato-data-hora");
+        FormatarColunaData("#tblLancamento .m8-formato-data");
+        FormatarColunaDatLinhaDupla("#tblLancamento .m8-formato-linhadupla-data");
+
+
+        if (typeof FormatarColunaTemplate === "function")
+            FormatarColunaTemplate();
+
+    }, 500);
+
+    setTimeout(() => {
+
+        setGridTelerikLink();
+
+    }, 1500);
+
+}
+
+
+$("document").ready(function () {
+
+    $("div[data-role='popup'].k-list-container.k-popup.k-group.k-reset").remove();
+
+    setTimeout(function () {
+
+        try {
+            GridAjusteDataBound("#tblLancamento");
+        } catch (e) { }
+
+        var grid = $("#tblLancamento").data("kendoGrid");
+
+        if (grid != undefined) {
+
+            grid.thead.find(".header-checkbox-selecao>.k-header-column-menu").remove();
+
+            if (true)
+                tblLancamentoCarregarConfiguracao();
+
+            if (grid.virtualScrollable)
+                $(grid.virtualScrollable.verticalScrollbar).attr("style", "width:18px");
+
+            if (false)
+                grid.dataSource.read();
+
+            grid.thead.kendoTooltip({
+                filter: "th",
+                content: function (e) {
+
+                    var target = e.target;
+                    var tip = $(target).find('a.k-link').data("m8-tooltip");
+                    var texto = tip ? tip : $(target).text();
+
+                    return texto;
+
+                }
+            });
+
+        }
+
+        if ($('.m8-portlet-listagem')[0] != 'undefined')
+            AjustarAlturaGrid($('.m8-portlet-listagem')[0], 0.95);
+
+        if ($('.modal-body')[0] != 'undefined' && $('.modal-body').closest('.modalPesquisa'))
+            AjustarAlturaGrid($('.modal-body')[0], 0.80);
+
+        $(window.parent).scrollTop(0);
+
+    }, 500);
+
+    $("#tblLancamento").on("dblclick", "tbody > tr", function (e) {
+
+        if ($("#tblLancamento .btn-editar-listagem").length > 0)
+            $(this).find(".btn-editar-listagem").click();
+        else {
+
+            if ($(this).hasClass('m8-registro-bloqueado-selecao'))
+                Notificacao.Aviso("Registro bloqueado para seleção.");
+            else if (typeof (frIndef) == 'function') {
+
+                let dataItem = $("#tblLancamento").data("kendoGrid").dataItem($(this));
+                selecionados = [dataItem.Id];
+
+                try {
+
+                    let retornosExtrasGrid = $("#tblLancamento").parents(".modal:first").attr("data-formulario-chamou-extras-grid");
+                    let retornosExtrasForm = $("#tblLancamento").parents(".modal:first").attr("data-formulario-chamou-extras-form");
+                    if (retornosExtrasGrid != null) {
+                        var formulario = $("#tblLancamento").parents(".modal:first").attr("data-formulario-chamou");
+                        var extrasGrid = retornosExtrasGrid.split(";");
+                        var extrasForm = retornosExtrasForm.split(";");
+                        extrasGrid.forEach(function name(extra, idx) {
+                            $(formulario + " #" + extrasForm[idx]).val(dataItem.get(extra));
+                        })
+                    }
+
+                } catch (e) { }
+                
+                try {
+
+                    let retornosExtrasGrid = $("#tblLancamento").parents(".modal:first").attr("data-formulario-chamou-extras-grid");
+                    let retornosExtrasForm = $("#tblLancamento").parents(".modal:first").attr("data-formulario-chamou-extras-form");
+                    if (retornosExtrasGrid != null) {
+                        var formulario = $("#tblLancamento").parents(".modal:first").attr("data-formulario-chamou");
+                        var extrasGrid = retornosExtrasGrid.split(";");
+                        var extrasForm = retornosExtrasForm.split(";");
+                        extrasGrid.forEach(function name(extra, idx) {
+                            $("#" + formulario + "#" + extrasForm[idx]).val([$("#tblLancamento").data("kendoGrid").dataItem($(this)).extra]);
+                        })
+                    }
+
+                } catch (e) { }
+                
+                try {
+                    frIndef(e, selecionados);
+                } catch (ex) { }
+
+            }
+
+        }
+
+    });
+
+    if (!false)
+        $("#tblLancamento").on("click", "tbody > tr", function () {
+
+            if ($(this).hasClass('m8-registro-bloqueado-selecao'))
+                selecionados = ''
+            else {
+
+                var dataItem = $("#tblLancamento").data("kendoGrid").dataItem($(this));
+
+                if (dataItem)
+                    selecionados = [dataItem.Id];
+
+            }
+
+        });
+
+    //retira a borda do titulo:
+    $('.portlet-title.m8-portlet-title').addClass('m8-titulo-sem-border-bottom');
+
+})</script><div class="k-widget k-grid " detalhes="False" id="tblLancamento"><div class="k-toolbar k-grid-toolbar k-grid-top"><div><div></div></div></div><div class="k-grouping-header">Arraste um cabeçalho da coluna e solte-o aqui para agrupar!</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:100px" /><col style="width:120px" /><col style="width:200px" /><col style="width:350px" /><col style="width:180px" /><col style="width:120px" /><col style="width:180px" /><col style="width:120px" /><col style="width:120px" /><col style="width:220px" /><col style="width:300px" /><col style="width:300px" /><col /><col style="width:180px" /><col style="width:150px" /><col style="width:95px" /></colgroup><tr><th class="k-header" data-field="AcaoBtn" data-groupable="false" data-title="Ações" scope="col" style="text-align:center;"><span class="k-link">Ações</span></th><th class="k-header " col-ordem="-1" data-field="Id" data-title="Código" scope="col" style=""><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Código identificador único'>Código</a></th><th class="k-header " col-ordem="1" data-field="EmpresaNome" data-title="Estabelecimento" scope="col" style=""><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Estabelecimento'>Estabelecimento</a></th><th class="k-header " col-ordem="2" data-field="PessoaLancamentoNome" data-title="Pessoa" scope="col" style=""><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Nome da Pessoa'>Pessoa</a></th><th class="k-header " col-ordem="3" data-field="TipoDocumentoNome" data-title="Tipo Documento" scope="col" style=""><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Tipo Documento'>Tipo Documento</a></th><th class="k-header " col-ordem="3" data-field="Documento" data-title="Documento" scope="col" style=""><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Nome do Documento'>Documento</a></th><th class="k-header " col-ordem="3" data-field="EspecieNome" data-title="Espécie" scope="col" style=""><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Espécie'>Espécie</a></th><th class="k-header tipo-coluna-datahora" col-ordem="4" data-field="DataLancamento" data-title="Lançamento" scope="col" style="text-align:center;"><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Data de Lançamento'>Lançamento</a></th><th class="k-header " col-ordem="6" data-field="ValorLancamento" data-title="Valor" scope="col" style="text-align:right;padding-right:50px;"><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Valor de Lançamento'>Valor</a></th><th class="k-header " col-ordem="10" data-field="OperacaoFinanceiraNome" data-title="Plano de Contas Financeiro" scope="col" style=""><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Plano de Contas Financeiro'>Plano de Contas Financeiro</a></th><th class="k-header " col-ordem="10" data-field="ContaOrigemNomeFiltro" data-title="Conta Origem" scope="col" style=""><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Conta Origem'>Conta Origem</a></th><th class="k-header " col-ordem="11" data-field="ContaDestinoNomeFiltro" data-title="Conta Destino" scope="col" style=""><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Conta Destino'>Conta Destino</a></th><th class="k-header " col-ordem="14" data-field="Observacao" data-title="Observação" scope="col" style="min-width:50px;"><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Observação'>Observação</a></th><th class="k-header " col-ordem="15" data-field="ImovelRuralNome" data-title="Imóvel Rural Nome" scope="col" style=""><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Imóvel Rural Nome'>Imóvel Rural Nome</a></th><th class="k-header " col-ordem="17" data-field="Complemento" data-title="Complemento" scope="col" style=""><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Complemento'>Complemento</a></th><th class="k-header " col-ordem="999999" data-field="ExcluidoPeloUsuarioId" data-title="Usuário" scope="col" style="text-align:center;"><a class='k-link m8-cabecalho-coluna' href='javascript:;' data-m8-tooltip='Usuário'>Usuário</a></th></tr></table></div></div><div class="k-grid-content" style="height:200px"><table><colgroup><col style="width:100px" /><col style="width:120px" /><col style="width:200px" /><col style="width:350px" /><col style="width:180px" /><col style="width:120px" /><col style="width:180px" /><col style="width:120px" /><col style="width:120px" /><col style="width:220px" /><col style="width:300px" /><col style="width:300px" /><col /><col style="width:180px" /><col style="width:150px" /><col style="width:95px" /></colgroup><tbody><tr class="k-no-data"><td colspan="16"></td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a class="k-pager-refresh k-link" href="/treinamento/Financeiro/LancamentoEntradaCaixaPesquisaGrid?modal=False" title="Atualizar"><span class="k-icon k-i-refresh">Atualizar</span></a><span class="k-pager-info k-label">N&#227;o existem registros para mostrar!</span></div></div><script>
+	jQuery(function(){jQuery("#tblLancamento").kendoGrid({"dataBound":tblLancamentoOnAjaxLoadComplete,"columns":[{"title":"Ações","attributes":{"style":"text-align:center;"},"menu":false,"width":"100px","template":"\u003cbutton class=\"btnEditarListagem540708 botao-tabela-padrao btn-editar-listagem btn btn-xs  \" data-placement=\"top\" data-url=\"/treinamento/Financeiro/LancamentoEntradaCaixa/#=Id#\" onclick=\"tblLancamentoEditarRegistro(this);\" title=\"Editar\" type=\"button\"\u003e\u003cimg src=\"/Content/gestao/img/editar.png\" style=\"height:17px;\"\u003e\u003c/img\u003e\u003c/button\u003e \u003cbutton class=\"btnExcluirListagem529877 botao-tabela-padrao btn-excluir-listagem btn btn-xs  \" data-placement=\"top\" data-url=\"/treinamento/Financeiro/LancamentoEntradaCaixaExcluir/#=Id#\" onclick=\"tblLancamentoDeletarRegistro(this);\" title=\"Excluir\" type=\"button\"\u003e\u003cimg src=\"/Content/gestao/img/excluir.png\" style=\"height:17px;\"\u003e\u003c/img\u003e\u003c/button\u003e \u003cbutton class=\"btnRestaurarListagem769892 botao-tabela-padrao btn-restaurar-listagem btn btn-xs  \" data-placement=\"top\" data-url=\"/treinamento/Financeiro/RestaurarRegistro/#=Id#__TTguRmxvcmVzdGFsLlZpc3VhbC5XZWIuTW9kZWxvcy5GaW5hbmNlaXJvLkxhbmNhbWVudG9FbnRyYWRhQ2FpeGFNb2RlbG8sIE04LkZsb3Jlc3RhbC5WaXN1YWwuV2ViLCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbA==\" onclick=\"tblLancamentoRestaurarRegistro(this);\" title=\"Restaurar Registro\" type=\"button\"\u003e\u003cimg src=\"/Content/gestao/img/restaurar-registro.svg\" style=\"height:17px;\"\u003e\u003c/img\u003e\u003c/button\u003e \u003cbutton class=\"btnDuplicarRegistro466049 botao-tabela-padrao btn-duplicar-registro btn btn-xs  \" data-placement=\"top\" data-url=\"/treinamento/Financeiro/LancamentoFinanceiroCopiar/#=Id#\" data-url-duplicar=\"/treinamento/Financeiro/LancamentoEntradaCaixa\" onclick=\"tblLancamentoDuplicarRegistro(this);\" title=\"Duplicar Registro\" type=\"button\"\u003e\u003cimg src=\"/Content/gestao/img/duplicar.png\" style=\"height:17px;\"\u003e\u003c/img\u003e\u003c/button\u003e ","field":"AcaoBtn","groupable":false,"sortable":false,"filterable":false,"encoded":true},{"title":"Código","attributes":{"class":"","style":""},"footerAttributes":{"class":"","style":""},"menu":false,"width":"120px","field":"Id","filterable":{},"encoded":true},{"title":"Estabelecimento","attributes":{"class":"","style":""},"footerAttributes":{"class":"","style":""},"width":"200px","field":"EmpresaNome","filterable":{},"encoded":true},{"title":"Pessoa","attributes":{"class":"","style":""},"footerAttributes":{"class":"","style":""},"width":"350px","field":"PessoaLancamentoNome","filterable":{},"encoded":true},{"title":"Tipo Documento","attributes":{"class":"","style":""},"footerAttributes":{"class":"","style":""},"width":"180px","field":"TipoDocumentoNome","filterable":{},"encoded":true},{"title":"Documento","attributes":{"class":"","style":""},"footerAttributes":{"class":"","style":""},"width":"120px","field":"Documento","filterable":{},"encoded":true},{"title":"Espécie","attributes":{"class":"","style":""},"footerAttributes":{"class":"","style":""},"width":"180px","field":"EspecieNome","filterable":{},"encoded":true},{"title":"Lançamento","attributes":{"class":"tipo-coluna-datahora","style":"text-align:center;text-align:center;"},"footerAttributes":{"class":"tipo-coluna-datahora","style":"text-align:center;text-align:center;"},"width":"120px","field":"DataLancamento","format":"{0:dd/MM/yyyy}","filterable":{},"encoded":true},{"title":"Valor","attributes":{"class":" ","style":"text-align:right;padding-right:50px;text-align:right;padding-right:50px;"},"footerAttributes":{"class":" ","style":"text-align:right;padding-right:50px;text-align:right;padding-right:50px;"},"width":"120px","template":"\u003ctext class=\u0027m8-numero\u0027 data-m8-formato=\u0027n2\u0027\u003e#=ValorLancamento#\u003ctext/\u003e","field":"ValorLancamento","filterable":{},"encoded":true},{"title":"Plano de Contas Financeiro","attributes":{"class":"","style":""},"footerAttributes":{"class":"","style":""},"width":"220px","field":"OperacaoFinanceiraNome","filterable":{},"encoded":true},{"title":"Conta Origem","attributes":{"class":"","style":""},"footerAttributes":{"class":"","style":""},"width":"300px","field":"ContaOrigemNomeFiltro","filterable":{},"encoded":true},{"title":"Conta Destino","attributes":{"class":"","style":""},"footerAttributes":{"class":"","style":""},"width":"300px","field":"ContaDestinoNomeFiltro","filterable":{},"encoded":true},{"title":"Observação","attributes":{"class":"","style":""},"footerAttributes":{"class":"","style":""},"field":"Observacao","filterable":{},"encoded":true},{"title":"Imóvel Rural Nome","attributes":{"class":"","style":""},"footerAttributes":{"class":"","style":""},"width":"180px","field":"ImovelRuralNome","filterable":{},"encoded":true},{"title":"Complemento","attributes":{"class":"","style":""},"footerAttributes":{"class":"","style":""},"width":"150px","field":"Complemento","filterable":{},"encoded":true},{"title":"Usuário","attributes":{"class":"","style":"text-align:center;"},"footerAttributes":{"class":"","style":"text-align:center;"},"width":"95px","template":"\r\n                \u003ca class=\u0027#\r\n                    if (EstaExcluido) {\r\n                        if (ExcluidoPeloUsuarioId) {\r\n                            #m8-usuario-excluiu-id\u0027 data-m8-excluiu-id=\u0027#=ExcluidoPeloUsuarioId#\u0027\u003e#=ExcluidoPeloUsuarioId##\r\n                        } else {\r\n                            #m8-usuario-excluiu-id\u0027 data-m8-excluiu-id=\u0027#=AtualizadoPeloUsuarioId#\u0027\u003e#=AtualizadoPeloUsuarioId##\r\n                        }\r\n                    }\r\n                    else {\r\n                        #m8-usuario-atualizou-id\u0027 data-m8-atualizou-id=\u0027#=AtualizadoPeloUsuarioId#\u0027\u003e#=AtualizadoPeloUsuarioId##\r\n                    }\r\n                #\u003c/a\u003e","field":"ExcluidoPeloUsuarioId","filterable":{},"encoded":true}],"groupable":{"messages":{"empty":"Arraste um cabeçalho da coluna e solte-o aqui para agrupar!"}},"pageable":{"autoBind":false,"numeric":false,"previousNext":false,"refresh":true,"buttonCount":10,"messages":{"display":"{2} registros","empty":"Não existem registros para mostrar!","itemsPerPage":"Registros por Página","first":"ListagemTelerik.BotaoVoltarInicio","previous":"Anterior","next":"Próximo","last":"Último","refresh":"Atualizar","morePages":"Mais Páginas"}},"sortable":true,"filterable":{"messages":{"info":"Mostrar registro com valor:","isTrue":"Verdadeiro","isFalse":"Falso","filter":"Filtro","clear":"Limpar","and":"E","or":"Ou","selectValue":"Selecione o Valor:","cancel":"Cancelar"},"operators":{"string":{"eq":"Igual a","neq":"Diferente de","startswith":"Inicia com","endswith":"Termina com","contains":"Contém","doesnotcontain":"Não Contém"},"number":{"eq":"Igual a","neq":"Diferente de","gte":"É Maior ou Igual a","gt":"É Maior que","lte":"É Menor ou Igual a","lt":"É Menor que"},"date":{"eq":"Igual a","neq":"Diferente de","gte":"É Maior ou Igual a","gt":"É Maior que","lte":"É Menor ou Igual a","lt":"É Menor que"},"enums":{"eq":"Igual a","neq":"Diferente de"}}},"columnMenu":{"messages":{"filter":"Filtro","columns":"Colunas","sortAscending":"Ordem Ascendente","sortDescending":"Ordem Descendente","settings":"ListagemTelerik.Configuracoes","lock":"Bloquear","unlock":"Desbloquear"}},"resizable":true,"reorderable":true,"scrollable":{"virtual":true},"toolbar":{},"autoBind":false,"dataSource":{"type":(function(){if(kendo.data.transports['aspnetmvc-ajax']){return 'aspnetmvc-ajax';} else{throw new Error('The kendo.aspnetmvc.min.js script is not included.');}})(),"transport":{"read":{"url":"/treinamento/Financeiro/LancamentoEntradaCaixaPesquisaGrid?modal=False"},"prefix":""},"pageSize":25,"page":1,"total":0,"serverPaging":true,"serverSorting":true,"serverFiltering":true,"serverGrouping":true,"serverAggregates":true,"filter":[],"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"fields":{"MeioPagamentoNome":{"type":"string"},"ContaCaixaBancoOrigemNome":{"type":"string"},"ContaCaixaBancoDestinoNome":{"type":"string"},"CentroCustoNome":{"type":"string"},"ProcessoImportacaoNome":{"type":"string"},"ProjetoExecucaoNome":{"type":"string"},"ProjetoExecucaoTarefaItemNome":{"type":"string"},"DataEmissao":{"type":"date"},"TipoDocumentoNome":{"type":"string"},"Documento":{"type":"string"},"OperacaoFinanceiraId":{"type":"number","defaultValue":null},"OperacaoFinanceiraNome":{"type":"string"},"MeioPagamentoId":{"type":"number","defaultValue":null},"ContaCaixaBancoOrigemId":{"type":"number","defaultValue":null},"ContaOrigemIdFiltro":{"type":"number","defaultValue":null},"ContaOrigemNomeFiltro":{"type":"string"},"ContaOrigemClassificacaoFiltro":{"type":"string"},"ContaCaixaBancoDestinoId":{"type":"number","defaultValue":null},"ContaDestinoIdFiltro":{"type":"number","defaultValue":null},"ContaDestinoNomeFiltro":{"type":"string"},"ContaDestinoClassificacaoFiltro":{"type":"string"},"EspecieId":{"type":"number","defaultValue":null},"EspecieNome":{"type":"string"},"ProjetoExecucaoId":{"type":"number","defaultValue":null},"ProjetoExecucaoTarefaItemId":{"type":"number","defaultValue":null},"CentroCustoId":{"type":"number","defaultValue":null},"ProcessoImportacaoId":{"type":"number","defaultValue":null},"ImovelRuralId":{"type":"number","defaultValue":null},"ImovelRuralNome":{"type":"string"},"TipoDocumento":{"type":"number","defaultValue":null},"Complemento":{"type":"string"},"EmpresaId":{"type":"number"},"EmpresaNome":{"type":"string"},"PessoaLancamentoId":{"type":"number","defaultValue":null},"PessoaLancamentoNome":{"type":"string"},"Operacao":{"type":"number"},"DataLancamento":{"type":"date"},"Competencia":{"type":"date","defaultValue":null},"ValorLancamento":{"type":"number"},"HistoricoContabilId":{"type":"number","defaultValue":null},"HistoricoContabilNome":{"type":"string"},"Observacao":{"type":"string"},"EmEdicao":{"type":"boolean"},"ExibirRodape":{"type":"boolean"},"CompletarMargensLaterais":{"type":"boolean"},"TabelaBancoDados":{"type":"string"},"ModeloJson":{"type":"string"},"ModeloFormulario":{"type":"string"},"UsuarioEmEdicao":{"type":"string"},"DataCadastro":{"type":"date"},"AtualizadoPeloUsuarioId":{"type":"number"},"UsuarioCadastrouId":{"type":"number"},"ExcluidoPeloUsuarioId":{"type":"number","defaultValue":null},"Id":{"type":"number","defaultValue":null},"AcaoBtn":{"editable":false,"type":"number","defaultValue":null},"EstaExcluido":{"type":"boolean"},"UsuarioAtualizacao":{"type":"string"},"UsuarioCadastro":{"type":"string"},"UsuarioExcluiu":{"type":"string"},"DataAtualizacao":{"type":"date"},"PropriedadesPersonalizadas":{"type":"object"}}}}}});});
+</script></div></div></div></div></div></div>
+
+        </div>
+
+    </div>
+
+    <style>
+
+        .scroll-to-top {
+            bottom: 80px;
+            z-index: 299;
+        }
+
+        .page-footer {
+            padding: 0px;
+            margin: 0px;
+            height: 0px;
+        }
+    </style>
+
+    <div class="page-footer"><div class="scroll-to-top"><i class="icon-arrow-up"></i></div></div>
+
+    <script>
+
+        setTimeout(() => {
+
+            function scrolling() {
+
+                let duration = 250;
+
+                if ($(this).scrollTop() > 100)
+                    $('.scroll-to-top').fadeIn(duration);
+                else
+                    $('.scroll-to-top').fadeOut(duration);
+
+            }
+
+            if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+
+                $(window).bind("touchend touchcancel touchleave", scrolling);
+                $('.m8-formulario').bind("touchend touchcancel touchleave", scrolling);
+
+            }
+            else {
+
+                $(window).scroll(scrolling);
+                $('.m8-formulario').scroll(scrolling);
+
+            }
+
+            $(".scroll-to-top").off('click').click(function (e) {
+
+                e.preventDefault();
+                $("html, body, .m8-formulario").animate({ scrollTop: 0 }, 250);
+
+            });
+
+        }, 1000);
+
+    </script>
+
+    
+
+    <script>
+
+        var CaluloAlturaScrollConteudo = function () {
+            
+            var rodape = $("#ContentRodape").outerHeight();
+
+            if (rodape != null) {
+                
+                $("#ContentScroll").height($("#pnlPrincipal").outerHeight() - (rodape));
+                $("#pnlPrincipal").attr("style", "");
+
+            }
+
+        }
+
+        var PaginaPrincipal = window.parent;
+
+        var abrirNovaAba = function (owner) {
+
+            if ($(owner).attr("href") != undefined) {
+
+                $(owner).click(function (e) {
+
+                    e.preventDefault();
+
+                    if (typeof PaginaPrincipal.AbrirNovaAba === "function")
+                        if ($(owner).attr("href") != 'javascript:;')
+                            PaginaPrincipal.AbrirNovaAba("novo", $(owner).attr("href"));
+
+                });
+
+            }
+
+        }
+
+        var AjustarConteudoMeio = function (iframe, altura) {
+
+            let conteudoFrame = $(iframe).contents();
+            let conteudoPortlet = conteudoFrame.find(".portlet");
+            let conteudoMeio = conteudoFrame.find(".k-widget.k-grid:not(.nao-ajustar)");
+
+            if (conteudoFrame.find(".m8-formulario").length > 0)
+                conteudoMeio = conteudoFrame.find(".m8-formulario");
+
+            conteudoPortlet.css("margin-bottom", 0);
+
+            if (conteudoMeio && conteudoMeio.length > 0) {
+
+                let availableHeight = altura - (conteudoPortlet.outerHeight() - conteudoMeio.outerHeight()) - 2;
+
+                conteudoMeio.each((i, e) => {
+
+                    let ev = $(e);
+
+                    if (!ev.parent().hasClass('k-detail-cell'))
+                        ev.height(availableHeight);
+                });
+
+            }
+
+        };
+
+        var AjustarIFrame = function (iframeID) {
+
+            var iframe = window.parent.document.getElementById(iframeID);
+
+            $('.page-container').height(iframe.offsetHeight + 'px');
+
+            AjustarConteudoMeio(iframe, iframe.offsetHeight);
+            CaluloAlturaScrollConteudo();
+
+            if (typeof AjustarConteudoIFrame === "function")
+                AjustarConteudoIFrame(iframe);
+
+            if (typeof AjustarConteudoIFrameInterno === "function")
+                AjustarConteudoIFrameInterno();
+
+        }
+
+        var ExecutarFuncoes = function (funcao) {
+
+            eval(funcao);
+
+        }
+
+        var ExecutarFuncoesComRetorno = function (funcao) {
+
+            return eval(funcao);
+
+        }
+
+        var FecharAbaPai = function (timeout) {
+
+            if (!timeout)
+                timeout = 300;
+
+            var m8hash = window.frameElement.id;
+
+            setTimeout(function () {
+
+                var w = window.frameElement.contentWindow.window.parent;
+                var tab = $(window.frameElement.parentElement);
+
+                if (w.FecharAba)
+                    w.FecharAba(tab, m8hash);
+
+            }, timeout);
+
+        };
+
+        var AjustarBotoesBarraFerramenta = function () {
+
+            var barra = $('.dropdown-menu.m8-acoes-formulario');
+
+            if (barra) {
+
+                var tamanhoAtual = barra.outerHeight();
+
+                if (tamanhoAtual > 450) {
+
+                    $('ul.dropdown-menu.m8-acoes-formulario').css('height', '450');
+                    $('ul.dropdown-menu.m8-acoes-formulario').css('overflow-y', 'scroll');
+
+                }
+
+            }
+
+        };
+
+        jQuery(document).ready(function () {
+
+            Notificacao.init();
+
+            let usuario = 'Ryan Nunes';
+
+            let preeencharEmpresa = ($("#Id").val() == "" || $("#Id").val() == "0")
+                && ($("form").find("#EmpresaId").length > 0 || $("form").find("#EstabelecimentoId").length > 0 || $("form").find("#EmpresaGrupoId").length > 0);
+
+            if (usuario != '' && preeencharEmpresa)
+                PreencheSelectEmpresa("/treinamento/Home/EmpresaSelecionada");
+
+            $(".m8-toolbar .btn ").each(function (idx) {
+
+                abrirNovaAba(this);
+
+            });
+
+            $(".btn-adicionar").each(function (idx) {
+
+                abrirNovaAba(this);
+
+            });
+
+            if (localStorage.getItem('LogDadosSistema') == 'True') {
+                $(".btn-log").remove();
+            }
+
+            if (PaginaPrincipal && PaginaPrincipal.MudarTituloPagina) {
+
+                var titulo = $(".m8-portlet-title .caption-subject ").text();
+                var formularioId = $(".m8-form-content:first #Id");
+                var tituloForm = "";
+
+                if ($(".m8-form-content:first #Id").length > 0) {
+
+                    var fID = formularioId.val() ? formularioId.val() : "Novo";
+                    tituloForm = ": " + fID;
+
+                }
+
+                titulo += tituloForm;
+                PaginaPrincipal.MudarTituloPagina(window.frameElement.id, titulo);
+
+            }
+
+            kendo.culture("pt-BR");
+            
+            AjustarData(".mascara-data");
+
+            $(".mascara-data").each(function (indice, objeto) {
+                
+                var nomeObjeto = objeto.name;
+
+                if (nomeObjeto != "DataAniversario" && nomeObjeto != undefined && nomeObjeto.readonly != "readonly")
+                    setTimeout(function () {
+
+                        $(objeto).kendoDatePicker({ format: "dd/MM/yyyy", culture: "pt-BR" });
+                        $(objeto).on("blur", function () { FormatarUltimaDataValida($(objeto)); });
+
+                    }, 1000);
+
+            });
+
+            $(".mascara-mes-ano").each(function (indice, objeto) {
+
+                var nomeObjeto = objeto.name;
+
+                if (nomeObjeto != undefined && nomeObjeto.readonly != "readonly")
+                    setTimeout(function () { $(objeto).kendoDatePicker({ format: "MM/yyyy", culture: "pt-BR" }); }, 1000);
+
+            });
+
+            $(".mascara-monetario18_2").on("focus", function () {
+
+                $(this)[0].setSelectionRange(0, $(this).val().length);
+
+            });
+
+            AjustarBotoesBarraFerramenta();
+
+        });
+
+    </script>
+
+    <script>
+        $(() => {
+
+            GestaoNewFace.LayoutPaginas();
+
+            try { $("body").attr("data-uadm", `${localStorage.getItem("u-adm")}`); } catch (e) { }
+
+            try {
+                var $pageOwner = $(window.top.document.body);
+
+                if ($pageOwner.hasClass("--nf-module-page-owner")) {
+                    $("body").attr("data-new-menu-concept", "1");
+                    $('body').on('click', (e) => {
+                        try {
+                            if (
+                                !!$pageOwner.find(".--nf-menu-rside").length &&
+                                (
+                                    $pageOwner.find("#conteudo-menu-logo").is(":visible") ||
+                                    $pageOwner.find("#conteudo-menu .row.--screen-notebook").is(":visible") ||
+                                    $pageOwner.find(".--nf-menu-rside-content").is(":visible")
+                                )
+                            ) {
+                                setTimeout(function () {
+                                    $pageOwner.find("#menu-horizontal-template").click();
+                                }, 100);
+                            }
+                        } catch (error) { console.log(error); }
+                    });
+                }
+
+                setTimeout(() => {
+                    $(".k-grid").each(function (index) {
+                        if (!!!$(this).attr("detalhes")) GridAjusteDataBound("#" + this.id);
+                    });                    
+                }, 3000);
+                
+            } catch {
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

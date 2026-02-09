@@ -1,0 +1,29 @@
+{
+  "createInModule": "Financeiro",
+  "tabs": [
+    {
+      "name": "Lancamentoentradacaixa",
+      "modelName": "LancamentoEntradaCaixaModelo",
+      "hasGrid": true,
+      "hasForm": false
+    },
+    {
+      "name": "Centro de Custo",
+      "modelName": "LancamentoCentroCustoModelo",
+      "hasGrid": true,
+      "hasForm": true
+    },
+    {
+      "name": "Contabilizações",
+      "modelName": "",
+      "hasGrid": false,
+      "hasForm": false
+    },
+    {
+      "name": "Anexos",
+      "modelName": "LancamentoAnexoModelo",
+      "hasGrid": false,
+      "hasForm": true
+    }
+  ]
+}

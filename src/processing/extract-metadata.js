@@ -72,7 +72,8 @@ function extractMetadata(config) {
   // 3. Extrair Campos (apenas do formulário principal)
   const mainForm = $('form').first();
   mainForm.find('.form-group').each((i, el) => {
-    const label = $(el).find('label').first().text().trim();
+    const labelEl = $(el).find('label').first();
+    const label = labelEl.text().trim().replace('*', '').trim();
     const input = $(el).find('input, select, textarea').first();
     
     if (input.length) {
@@ -81,23 +82,27 @@ function extractMetadata(config) {
       const type = input.attr('type') || input.prop('tagName').toLowerCase();
       
       // Pular campos ocultos e técnicos
-      if (type === 'hidden' || !name || name === 'undefined') return;
+      if (type === 'hidden' || !name || name === 'undefined' || name.startsWith('__')) return;
       
       const required = input.attr('data-obrigatorio') === 'true' || 
-                      input.attr('required') === 'required';
+                      input.attr('required') === 'required' ||
+                      labelEl.find('span.required').length > 0 ||
+                      $(el).hasClass('required');
+      
       const maxLength = input.attr('maxlength');
+      const dataUrl = input.attr('data-url_dados');
       
       // Detectar componente
-      let component = 'InputText';
+      let component = 'Input';
       if (input.is('select')) {
-        component = input.attr('data-url_dados') ? 'Select2' : 'Select';
+        component = dataUrl ? 'Select2' : 'Select';
       } else if (input.is('textarea')) {
         component = 'TextArea';
-      } else if (input.hasClass('mascara-data')) {
+      } else if (input.hasClass('mascara-data') || input.hasClass('datepicker')) {
         component = 'Date';
       } else if (input.hasClass('make-switch') || type === 'checkbox') {
-        component = 'Switch';
-      } else if (input.hasClass('mascara-inteiro') || input.hasClass('mascara-decimal')) {
+        component = 'Checkbox';
+      } else if (input.hasClass('mascara-inteiro') || input.hasClass('mascara-decimal') || type === 'number') {
         component = 'Number';
       }
       
@@ -107,7 +112,8 @@ function extractMetadata(config) {
         component,
         type,
         required: !!required,
-        maxLength: maxLength ? parseInt(maxLength) : null
+        maxLength: maxLength ? parseInt(maxLength) : null,
+        dataUrl: dataUrl || null
       });
     }
   });

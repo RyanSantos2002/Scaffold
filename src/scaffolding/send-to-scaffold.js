@@ -3,7 +3,7 @@ const path = require("path");
 const http = require("http");
 
 // Load config
-const configPath = path.resolve(__dirname, "capture", "@Config", "index.js");
+const configPath = path.resolve(__dirname, "..", "..", "capture", "@Config", "index.js");
 if (!fs.existsSync(configPath)) {
   console.error("Config not found at " + configPath);
   process.exit(1);
@@ -11,10 +11,10 @@ if (!fs.existsSync(configPath)) {
 const config = require(configPath);
 
 // Locate JSON
-// ../output/json/{config.tela}/{config.tela}.json (agora está fora da pasta html-capture)
 const jsonPath = path.resolve(
   __dirname,
   "..",
+  "capture",
   "output",
   "json",
   config.tela,
@@ -32,7 +32,7 @@ const jsonData = fs.readFileSync(jsonPath, "utf8");
 const postData = jsonData;
 
 const options = {
-  hostname: "localhost",
+  hostname: "127.0.0.1",
   port: 3333,
   path: "/scaffold",
   method: "POST",
@@ -69,19 +69,22 @@ function sendRequest() {
   });
 
   req.on("error", (e) => {
+    console.log("DEBUG: Error event triggered:", e.message);
     if (attempts < MAX_RETRIES) {
       console.log(`Server not ready... retrying in 2s (${e.message})`);
       setTimeout(sendRequest, 2000);
     } else {
       console.error(`PROBLEM with request: ${e.message}`);
       console.error(
-        "Make sure the scaffolding server is running (npm run dev).",
+        "Make sure the scaffolding server is running (npm run dev)."
       );
       process.exit(1);
     }
   });
 
+  console.log("DEBUG: Writing postData...");
   req.write(postData);
+  console.log("DEBUG: Ending request...");
   req.end();
 }
 

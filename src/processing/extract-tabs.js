@@ -3,7 +3,7 @@ const path = require('path');
 const cheerio = require('cheerio');
 
 // Import configuration dynamically
-const configPath = path.resolve(__dirname, 'capture', '@Config', 'index.js');
+const configPath = path.resolve(__dirname, '..', '..', 'capture', '@Config', 'index.js');
 if (!fs.existsSync(configPath)) {
     console.error("Configuration file not found at " + configPath);
     process.exit(1);
@@ -11,12 +11,10 @@ if (!fs.existsSync(configPath)) {
 const config = require(configPath);
 
 // Dynamic Input Directory
-// ../output/Form (onde engine.js salvou)
-const inputDir = path.resolve(__dirname, '..', 'output', 'Form');
+const inputDir = path.resolve(__dirname, '..', 'capture', 'output', 'Form');
 
 // Dynamic Output Directory
-// ../output/json/{config.tela}
-const outputBaseDir = path.resolve(__dirname, '..', 'output', 'json', config.tela);
+const outputBaseDir = path.resolve(__dirname, '..', 'capture', 'output', 'json', config.tela);
 
 function findHtmlFile() {
     if (!fs.existsSync(inputDir)) return null;

@@ -28,3 +28,27 @@ Thumbs.db
 logs/
 *.log
 npm-debug.log*
+
+# Build errors temporários
+build_errors*.txt
+symbols*.log
+
+# Scripts de debug/análise temporários
+ls_*.js
+read_*.js
+find_*.js
+debug_*.js
+check_*.js
+analyze_build_log.js
+run_build_log.js
+run_build_proxy.js
+
+# Output temporário
+output/html/*
+output/json/*
+output/audits/*
+!output/**/.gitkeep
+
+# Temp
+temp/*
+!temp/.gitkeep
