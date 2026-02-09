@@ -15,3 +15,8 @@ description: Corrigir automaticamente problemas de scaffolding (pastas, tabName,
 
 - Command: `node audit-scaffold-deep.js`
 - Cwd: `c:/Users/Ryan.nunes/Desktop/Nova pasta/html-capture`
+
+4. Validar com Build final
+
+- Command: `npm run build`
+- Cwd: `C:/Fontes/FrontM8`

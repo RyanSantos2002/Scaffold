@@ -1,5 +1,5 @@
 ---
-description: Gera código FrontM8 completo a partir do HTML extraído seguindo Padrões.md
+description: Gera código FrontM8 completo a partir do HTML extraído pelo  Projeto-Scaffolding
 ---
 
 1. Inicie o servidor de Scaffolding (Background)
@@ -8,5 +8,5 @@ description: Gera código FrontM8 completo a partir do HTML extraído seguindo P
    - WaitMsBeforeAsync: 5000
 
 2. Envie o JSON para gerar a tela
-   - Command: `node send-scaffold.js`
+   - Command: `node src/scaffolding/send-to-scaffold.js`
    - Cwd: `c:/Users/Ryan.nunes/Desktop/Nova pasta/html-capture`
