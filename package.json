@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local:login": "node src/local/login-handler-local.js",
+    "local:capturar": "node src/local/browser-engine-local.js",
+    "login": "node src/capture/login-handler.js",
+    "capturar": "node src/capture/browser-engine.js"
   },
   "keywords": [],
   "author": "",

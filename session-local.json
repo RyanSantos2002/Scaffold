@@ -1,0 +1,50 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "http://localhost:5173",
+      "localStorage": [
+        {
+          "name": "tenant",
+          "value": "\"Treinamento\""
+        },
+        {
+          "name": "i18nextLng",
+          "value": "pt-BR"
+        },
+        {
+          "name": "token",
+          "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUZW5hbnQiOiJ0cmVpbmFtZW50byIsIkRvbWluaW8iOiJhcHAuZXJwbTguY2xvdWQiLCJFbXByZXNhSWQiOiIyIiwiR3J1cG9FbXByZXNhSWQiOiIxIiwiVXN1YXJpb0lkIjoiMTA5IiwiVXN1YXJpb05vbWUiOiJSeWFuIE51bmVzIiwiQ25waiI6IjUzMDQyMjcwMDAwMTIxIiwiSXNBZG1pbiI6IlRydWUiLCJuYmYiOjE3NzE1MDAwMzUsImV4cCI6MTc3MTUwMzYzNSwiaWF0IjoxNzcxNTAwMDM1LCJpc3MiOiJNOCIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0In0.x5umPhxwjnhsS9fQEAEFwiWQJR4bd5xb_8PwRHbP56s\""
+        },
+        {
+          "name": "estabelecimento_nome",
+          "value": "\"ESTABELECIMENTO TESTE - 2\""
+        },
+        {
+          "name": "permissions:module",
+          "value": "[\"Dashboard\",\"Cadastros\",\"Compras\",\"Contabil\",\"Custos\",\"Contratos\",\"Estoque\",\"Financeiro\",\"Fiscal\",\"Imobilizados\",\"Nfe\",\"Nfce\",\"Nfse\",\"Utilitarios\",\"Vendas\",\"MercadoLivre\",\"Processos\",\"Crm\",\"Tributos\",\"CTe\",\"MonitorNFe\",\"PcpProducao\",\"Projetos\",\"SAC\",\"ConsultaCredito\",\"Cereais\",\"Expenses\",\"AssistenciaTecnica\",\"Mensageria\",\"Analytics\",\"Api\",\"WidgetWhats\",\"Mobile\",\"PortalCliente\"]"
+        },
+        {
+          "name": "empresa_nome",
+          "value": "\"EMPRESA TESTES - 1\""
+        },
+        {
+          "name": "permissions:menu:Cadastros",
+          "value": "{\"Cadastros\":{\"Cadastros\":[\"ConfiguracaoAdrcsts\",\"AtividadesEconomicas\",\"Bacens\",\"Bairros\",\"CanaisDeclaracaoImportacoes\",\"CargoPessoas\",\"PessoaCategorias\",\"CentrosCustos\",\"Cfops\",\"ClassificacaoPessoas\",\"ClassificacaoTributariaNfes\",\"ImpostosCadastro\",\"Contadores\",\"ContatosPessoaCadastro\",\"DepartamentoTrabalhos\",\"Departamentos\",\"DespesaContainers\",\"DestinoMercadorias\",\"EmpresasGrupos\",\"EnderecosPessoa\",\"ConfiguracaoEnderecoAcessos\",\"EscalaHoras\",\"Empresas\",\"Estados\",\"Feriados\",\"Fretes\",\"Funcionarios\",\"GruposAcessos\",\"TributacaoOperacaoFiscalGrupos\",\"HistoricoContabeis\",\"ImoveisRurais\",\"VendedorIndicadores\",\"EmbarqueDestinos\",\"EquipamentoMarcaPessoas\",\"Mensagens\",\"ModalidadeDespachos\",\"ContabilPlanoContaModelos\",\"OperacoesFinanceirasModelos\",\"EquipamentoModeloPessoas\",\"ModeloDocumentosFiscais\",\"Municipios\",\"Navios\",\"OperacoesFiscais\",\"OrgaosAnuentess\",\"Paises\",\"ContaContabeis\",\"Regioes\",\"StatusOcorrenciaTransportes\",\"PessoaSubCategorias\",\"TabelasContabeis\",\"OutrosDocumentosOperacoes\",\"TipoPessoas\",\"TributacaoOperacaoFiscais\",\"VeiculosFipes\",\"VeiculoPessoas\",\"Veiculos\",\"Vendedores\",\"Volumes\",\"PessoaGrupos\",\"Motoristas\",\"RegrasCadastro\",\"FiscalCondicaoPagamentoUfImpostos\",\"SpedTabelaAjusteApuracoes\",\"SpedTabelaAjusteValores\",\"TiposVeiculos\"]},\"Movimento\":{\"Configurações\":[\"ConfiguracaoSistema\",\"PessoaClassificacao\",\"ConfiguracoesBlocoK\",\"ConfiguracaoRelatorioPadraoEspelho\",\"ConfiguracaoRelatorioPersonalizados\"],\"Transporte\":[\"LocalTrabalhos\"]}}"
+        },
+        {
+          "name": "empresa_id",
+          "value": "1"
+        },
+        {
+          "name": "darkreader:stage",
+          "value": "\"light\""
+        },
+        {
+          "name": "estabelecimento_id",
+          "value": "2"
+        }
+      ]
+    }
+  ]
+}
